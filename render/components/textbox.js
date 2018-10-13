@@ -22,7 +22,8 @@ $.global.register({
                         placeholder: "",
                         value: "",
                         events: {},
-                        cols: "min-content auto"
+                        label: "",
+                        cols: "30% 70%"
                     };
 
                     $.append(args, spec, true);
@@ -74,11 +75,12 @@ $.global.register({
                     "c-textbox": {
                         display: "grid",
                         margin: "4px",
+                        height: "24px",
                     },
                     "c-textbox-label": {
                         color: "#6d85a9",
-                        fontSize: "14pt",
-                        letterSpacing: "4px",
+                        fontSize: "12pt",
+                        letterSpacing: "0px",
                         fontFamily: "ubuntu",
                         margin: "auto 0px 0px",
                         padding: "2px"
@@ -86,11 +88,11 @@ $.global.register({
                     "c-textbox-input": {
                         backgroundColor: "#dfe3ec",
                         border: "none",
-                        padding: "4px 32px",
+                        padding: "4px 22px",
                         boxSizing: "border-box",
                         color: "#6d85a9",
                         fontSize: "11pt",
-                        letterSpacing: "2px",
+                        letterSpacing: "0px",
                         fontFamily: "ubuntu",
                         borderRadius: "30px",
                         outline: "none",

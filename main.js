@@ -11,7 +11,7 @@ function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
       'node-integration': true,
-      frame: false,
+      frame: true,
       resizable: true,
       fullscreen: false,
       });
