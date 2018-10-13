@@ -11,24 +11,68 @@ function body () {
             $.create.div({
                     id: "user-bar"
                 },
-                $.create.div({
-                    id: "login-bar"
-                    },
-                    // add text inputs
-                    // user
-                    $.styler.append(new $.components.textbox({
+                $.create.div ({styler: "user-wrapper"},
+                    // Log in
+                    $.create.div({
+                        id: "login.input",
+                        styler: [
+                            "login-bar",
+                            "login-in",
+                        ]
+                        },
+                        // add text inputs
+                        // user
+                        $.styler.append(new $.components.textbox({
+                            id: "login.username",
                             label: "Username",
                         }), "login-pos-1" ),
-                    // password
-                    $.styler.append(new $.components.textbox({
-                        label: "Username",
-                    }), "login-pos-2" ),
-                    $.styler.append(new $.components.button({
-                        text: "Login",
-                        callback: () => {console.log("LOGGING IN @ TODO")},
-                    }), "login-pos-3" ),
+                        // password
+                        $.styler.append(new $.components.textbox({
+                            id: "login.password",
+                            label: "Password",
+                            type: "password"
+                        }), "login-pos-2" ),
+                        $.styler.append(new $.components.button({
+                            text: "Login",
+                            callback: login,
+                        }), "login-pos-3" ),
+                        ),
+                    // logging in status
+                    $.create.div({
+                        id: "login.status",
+                        styler: [
+                            "login-status-container",
+                            "login-left-out",
+                        ]
+                        },
+                        $.create.p({
+                            id: "login.text",
+                            textContent: "Logging in please wait.",
+                            styler: "login-text"})
+                    ),
+                    // logged in
+                    $.create.div({
+                        id: "user.profile",
+                        styler: [
+                            "login-profile-container",
+                            "login-left-out",
+                        ]
+                        },
+                        $.create.p({
+                            textContent: "Welcome HappyGoKaboom",
+                            styler: "user-profile-name"
+                        }),
+                        $.create.div({
+                            styler: "user-profile-pic-container",
+                            },
+                            $.create.img({
+                                src: "./images/avatar.png",
+                                styler: "user-profile-pic",
+                            })
+                        )
+                    ),
                 ),
-                ),
+            ),
             $.styler.append(new $.components.hLine({style: "left"}),"header-hline-pos"),
         )
     );
@@ -39,18 +83,44 @@ function body () {
                 id: "main",
             },
             $.create.div({id: "menu"},
-                new $.components.mainMenuItem("Launcher"),
-                new $.components.hLine(),
-                new $.components.mainMenuItem("Repository"),
-                new $.components.hLine(),
-                new $.components.mainMenuItem("Moderator"),
-                new $.components.hLine(),
-                new $.components.mainMenuItem("Admin"),
-                new $.components.hLine(),
-                new $.components.mainMenuItem("Server"),
-                new $.components.hLine(),
-                new $.components.mainMenuItem("Settings"),
+                // =======     Launcher    ======================================
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Launcher", callback: $.page.show.bind(null, "Launcher")}),
+                    "main-menu-item-shown"
                 ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-shown"),
+
+                // =======     Repository    ======================================
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Repository", callback: $.page.show.bind(null, "Repository")}),
+                    "main-menu-item-shown"
+                ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-shown"),
+
+                // =======     Moderator    ======================================
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Moderator", callback: $.page.show.bind(null, "Moderator")}),
+                    "main-menu-item-hidden"
+                ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
+
+                // =======     Admin    ======================================
+                $.styler.append(new $.components.mainMenuItem({text: "Admin", callback: $.page.show.bind(null, "Admin")}),
+                    "main-menu-item-hidden"
+                ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
+
+                // =======     Server    ======================================
+                $.styler.append(new $.components.mainMenuItem({text: "Server", callback: $.page.show.bind(null, "Server")}),
+                    "main-menu-item-hidden"
+                ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
+
+                // =======     Settings    ======================================
+                $.styler.append(new $.components.mainMenuItem({text: "Settings", callback: $.page.show.bind(null, "Settings")}),
+                    "main-menu-item-shown"
+                ),
+            ),
             $.create.div({id: "content"}),
         )
     );
@@ -73,6 +143,10 @@ $.styler.create({
         padding: "0",
         margin: "0",
     },
+    "@p": {
+        cursor: "default",
+        userSelect: $.prefix.bind("none"),
+    },
     "#header": {
         position: "relative",
         left: "0px",
@@ -88,7 +162,6 @@ $.styler.create({
         display: "grid",
         gridTemplateColumns: "20% 100%",
         gridTemplateRows: "100%",
-        padding: "0px 24px"
     },
     "#footer": {
         position: "relative",
@@ -110,13 +183,7 @@ $.styler.create({
         height: "118px",
         width: "100%",
     },
-    "#login-bar": {
-        position: "relative",
-        display: "grid",
-        gridTemplateColumns: "40% 2% 40% 2% auto",
-        gridColumnStart: "3",
-        padding: "12px"
-    },
+
     "login-pos-1": {
         gridColumnStart: "1",
     },
@@ -129,7 +196,94 @@ $.styler.create({
     "header-hline-pos": {
         position: "absolute",
         bottom: "0px"
-    }
+    },
+    "user-wrapper": {
+        position: "relative",
+        overflow: "hidden",
+        gridColumnStart: "3",
+        width: "800px",
+        height: "100%",
+    },
+    "login-status": {
+
+    },
+    "login-text": {
+        fontSize: "@theme.defaultFontSize",
+        fontFamily: "@theme.defaultFont",
+        color: "@theme.textColor",
+        position: "relative",
+        left: "50%",
+    },
+
+    "login-bar": {
+        position: "absolute",
+        display: "grid",
+        gridTemplateColumns: "40% 2% 40% 2% auto",
+        padding: "12px",
+        width: "calc(100% - 24px)",
+        transition: $.prefix.bind("transform 250ms, opacity 250ms"),
+    },
+    "login-status-container": {
+        position: "absolute",
+        width: "calc(100% - 24px)",
+        transition: $.prefix.bind("transform 250ms, opacity 250ms"),
+    },
+    "login-profile-container": {
+        position: "absolute",
+        width: "calc(100% - 24px)",
+        transition: $.prefix.bind("transform 250ms, opacity 250ms"),
+        display: "grid",
+        gridTemplateColumns: "auto 80px"
+    },
+    "login-left-out": {
+        transform: "translateX(-100%)",
+        pointerEvents: "none",
+    },
+    "login-in": {
+        transform: "translateX(0%)",
+        pointerEvents: "all",
+    },
+    "login-right-out": {
+        transform: "translateX(100%)",
+        pointerEvents: "none",
+    },
+    "user-profile-name": {
+        fontSize: "@theme.usernameFontSize",
+        fontFamily: "@theme.usernameFont",
+        letterSpacing: "@theme.usernameSpacing",
+        color: "@theme.textColor",
+        position: "relative",
+        padding: "0px 60px",
+        textAlign: "right",
+    },
+    "user-profile-pic-container": {
+        position: "relative",
+        top: "15px",
+        width: "80px",
+        height: "80px",
+        overflow: "hidden",
+        borderRadius: "50%"
+    },
+    "user-profile-pic": {
+        position: "relative",
+        width: "100%"
+    },
+    "main-menu-item-hidden": {
+        height: "0px",
+        opacity: 0,
+        pointerEvents: "none"
+    },
+    "main-menu-item-shown": {
+        height: "72px",
+        opacity: 1,
+        pointerEvents: "all"
+    },
+    "main-menu-line-hidden": {
+        opacity: 0,
+    },
+    "main-menu-line-shown": {
+        opacity: 1,
+    },
 });
 
 // ###########################      FUNCTIONAL        ###################################

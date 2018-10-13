@@ -23,6 +23,7 @@ $.global.register({
 
         create(arg) {
             return ($.create.div({
+                        id: arg.id ? arg.id : null,
                         event: {
                             click: arg.callback
                         },

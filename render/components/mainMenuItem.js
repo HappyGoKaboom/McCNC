@@ -22,18 +22,30 @@ $.global.register({
         }
 
         create(arg) {
-            return ($.create.div({
-                styler: [
-                    "set main-menu-bg",
-                    "event hover main-menu-bg-on/main-menu-bg-off"
-                ]},
-                $.create.p({
-                    textContent: arg,
+            return (
+                $.create.div({
+                    event: {
+                        click: arg.callback
+                    },
+                    class: "mainMenuItem",
+                    id: "mainMenuItem_"+arg.text,
+                    ref: "menu",
+                    refs: true,
+                    menu: arg.text,
+                    selected: false,
                     styler: [
-                        "set main-menu-text"
-                    ]
-                })
-            )
+                        "main-menu-bg",
+                        "event hover main-menu-bg-on/main-menu-bg-off"
+                    ]},
+                    $.create.p({
+                        ref: "text",
+                        textContent: arg.text,
+                        styler: [
+                            "main-menu-text-default",
+                            "main-menu-text"
+                        ]
+                    })
+                )
             )
         }
 
@@ -41,23 +53,45 @@ $.global.register({
             $.styler.create({
                 "main-menu-bg": {
                     position: "relative",
-                    padding: "12px 0px 12px 0px",
+                    height: "72px",
+                    transition: $.prefix.bind(
+                        "transform 150ms, height 150ms, opacity 150ms")
                 },
                 "main-menu-bg-on": {
-                    backgroundColor: "@theme.backColorLighter",
+                    background: (el) => {return (el.selected ? false : "linear-gradient(90deg, transparent, "+($.theme.current.backColorLighter)+", transparent)")},
                 },
                 "main-menu-bg-off": {
-                    backgroundColor: "unset",
+                    background: (el) => {return (el.selected ? false : "unset")},
+                },
+                "main-menu-bg-selected": {
+                    background: "linear-gradient(90deg, transparent, "+($.theme.current.backColorLighter)+", transparent)",
                 },
                 "main-menu-text": {
-                    color: "@theme.textColor",
+                    top: "50%",
+                    position: "relative",
                     fontSize: "@theme.mainMenuTextSize",
                     fontFamily: "@theme.mainMenuFont",
-                    letterSpacing: "@theme.mainMenuTextSpacing",
                     userSelect: $.prefix.bind("none"),
                     padding: "0px 48px",
                     margin: "0px",
-                }
+                    transition: $.prefix.bind(
+                        "color 150ms, letter-spacing 150ms, transform 150ms")
+                },
+                "main-menu-text-default": {
+                    color: "@theme.textColor",
+                    letterSpacing: "@theme.mainMenuTextSpacing",
+                    transform: "translate(0%, -50%)",
+                },
+                "main-menu-text-selected": {
+                    color: "@theme.textColorVivid",
+                    letterSpacing: "@theme.mainMenuTextSpacingSelected",
+                    transform: "translate("+(parseInt($.theme.current.mainMenuTextSpacing)*2)+"px, -50%)",
+                },
+                "main-menu-text-not-selected": {
+                    color: "@theme.textColor",
+                    letterSpacing: "@theme.mainMenuTextSpacingNotSelected",
+                    transform: "translate(0%, -50%)",
+                },
             });
         }
     }

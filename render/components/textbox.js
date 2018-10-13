@@ -23,17 +23,13 @@ $.global.register({
                         value: "",
                         events: {},
                         label: "",
-                        cols: "30% 70%"
+                        cols: "30% 70%",
+                        type: "",
                     };
 
                     $.append(args, spec, true);
 
                     let component = this.create.call($.components.textbox.prototype, spec);
-
-                    if (args.id)
-                        {
-                            $.plugins.features.id_set(args.id, component);
-                        }
 
                     return component;
                 }
@@ -45,6 +41,7 @@ $.global.register({
             create (args) {
                 return (
                     $.create.div({
+                        id: args.id ? args.id : null,
                         styler: "c-textbox",
                         refs: true,
                         style: {
@@ -62,6 +59,7 @@ $.global.register({
                             styler: "c-textbox-input",
                             ref: "input",
                             attributes: {
+                                type: args.type,
                                 placeholder: args.placeholder
                             },
                             textContent: args.value,
