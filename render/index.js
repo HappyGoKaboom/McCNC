@@ -11,6 +11,10 @@ function body () {
             $.create.div({
                     id: "user-bar"
                 },
+                $.create.p({
+                    textContent: "Minecraft - CNC",
+                    styler: "header-title"
+                }),
                 $.create.div ({styler: "user-wrapper"},
                     // Log in
                     $.create.div({
@@ -160,7 +164,7 @@ $.styler.create({
         width: "100%",
         height: "calc(100% - 120px - 60px)",
         display: "grid",
-        gridTemplateColumns: "20% 100%",
+        gridTemplateColumns: "20% 80%",
         gridTemplateRows: "100%",
     },
     "#footer": {
@@ -179,11 +183,20 @@ $.styler.create({
         position: "absolute",
         left: "0px",
         display: "grid",
-        gridTemplateColumns: "10% auto max-content",
+        gridTemplateColumns: "44px auto max-content",
         height: "118px",
         width: "100%",
     },
-
+    "header-title": {
+        position: "relative",
+        fontSize: "32pt",
+        fontFamily: "Audiowide",
+        color: "@theme.textColor",
+        gridColumnStart: "2",
+        margin: "0",
+        letterSpacing: "12px",
+        alignSelf: "center",
+    },
     "login-pos-1": {
         gridColumnStart: "1",
     },
@@ -204,9 +217,6 @@ $.styler.create({
         width: "800px",
         height: "100%",
     },
-    "login-status": {
-
-    },
     "login-text": {
         fontSize: "@theme.defaultFontSize",
         fontFamily: "@theme.defaultFont",
@@ -214,19 +224,20 @@ $.styler.create({
         position: "relative",
         left: "50%",
     },
-
     "login-bar": {
         position: "absolute",
         display: "grid",
-        gridTemplateColumns: "40% 2% 40% 2% auto",
+        gridTemplateColumns: "40% 2% 40% 2% auto 44px",
         padding: "12px",
         width: "calc(100% - 24px)",
         transition: $.prefix.bind("transform 250ms, opacity 250ms"),
+        bottom: "0px",
     },
     "login-status-container": {
         position: "absolute",
         width: "calc(100% - 24px)",
         transition: $.prefix.bind("transform 250ms, opacity 250ms"),
+        bottom: "0px",
     },
     "login-profile-container": {
         position: "absolute",
@@ -255,6 +266,7 @@ $.styler.create({
         position: "relative",
         padding: "0px 60px",
         textAlign: "right",
+        alignSelf: "end",
     },
     "user-profile-pic-container": {
         position: "relative",
@@ -316,6 +328,12 @@ function ready () {
     // The dom is ready for adding content ie. document.body (so appendChild() works)
     windowResizeEvent(); // call to set initial scale
     document.body.appendChild($.content);
+
+    $.page.setup(); // setup pages
+
+    setTimeout(() => {
+        $.page.show("Launcher")
+    }, 100);
 }
 
 body(); // generate content

@@ -1,10 +1,10 @@
 $.global.register({
     // info
-    name: "theme.default",
+    name: "Launcher",
 
     // config
-    path: "theme.default", // optional assign path
-    auto: true, // automatically instances the class to the path / default true
+    path: "pages.launcher", // optional assign path
+    auto: false, // automatically instances the class to the path / default true
 
     // extensions / plugins
     plugins: [    ],
@@ -12,26 +12,16 @@ $.global.register({
     // instance
     instance: class Launcher {
         constructor(args) {
-            // fires on registration before this.$ is available
-            // process args and check / defaults
+            // GUI here
+            $.id.content.appendChild($.create.div({
+                    id: "page.launcher",
+                    styler: "page-launcher"
+                    },
 
-            // if (!args){args = {}}
-            //
-            // let spec = {
-            //     text: "Button",
-            //     callback: () => {console.log("Pressed")}
-            // };
-            //
-            // $.append(args, spec, true);
-
-            // let component = this.create.call($.components.button.prototype, spec);
-
-            // if (args.id)
-            // {
-            //     $.plugins.features.id_set(args.id, component);
-            // }
-            //
-            // return component;
+                // Launcher Test test
+                new $.components.launcher(),
+                ),
+            )
         }
 
         registered() {
@@ -39,7 +29,15 @@ $.global.register({
         }
 
         stylesheet() {
-            $.styler.create({});
+            $.styler.create({
+                "page-launcher": {
+                    border: "1px solid red",
+                    widdth: "100%",
+                    height: "100%",
+                    display: "grid",
+                    gridTemplateColumns: "15% auto 15%"
+                }
+            });
         }
     }
 });

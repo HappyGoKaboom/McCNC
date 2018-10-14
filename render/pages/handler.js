@@ -14,11 +14,16 @@ $.global.register({
         constructor(args) {
             // fires on registration before this.$ is available
             // process args and check / defaults
-
         }
 
         registered() {
 
+        }
+
+        setup () {
+            for (let n in $.pages) {
+                $[n] = new $.pages[n]();
+            }
         }
 
         show (id) {
