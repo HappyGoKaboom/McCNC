@@ -20,6 +20,8 @@ $.global.register({
 
                 // Launcher Test test
                 new $.components.launcher(),
+                new $.components.launcher(),
+                new $.components.launcher(),
                 ),
             )
         }
@@ -31,11 +33,11 @@ $.global.register({
         stylesheet() {
             $.styler.create({
                 "page-launcher": {
-                    border: "1px solid red",
                     widdth: "100%",
                     height: "100%",
                     display: "grid",
-                    gridTemplateColumns: "15% auto 15%"
+                    gridTemplateColumns: "15% auto 15%",
+                    gridTemplateRows: "repeat(100, auto)",
                 }
             });
         }
