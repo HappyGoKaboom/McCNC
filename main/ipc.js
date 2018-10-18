@@ -8,7 +8,7 @@ exports.call = (call, args) => {
         {
         console.log("IPC.call Failed: " + call);
         }
-}
+};
 
 exports.send = () => {
     win.webContents.send("abc1", "foo");
@@ -17,4 +17,4 @@ exports.send = () => {
 
 exports.withRendererCallback = (mapper) => {
     return "hello";
-}
+};

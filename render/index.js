@@ -109,19 +109,22 @@ function body () {
                 $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
 
                 // =======     Admin    ======================================
-                $.styler.append(new $.components.mainMenuItem({text: "Admin", callback: $.page.show.bind(null, "Admin")}),
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Admin", callback: $.page.show.bind(null, "Admin")}),
                     "main-menu-item-hidden"
                 ),
                 $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
 
                 // =======     Server    ======================================
-                $.styler.append(new $.components.mainMenuItem({text: "Server", callback: $.page.show.bind(null, "Server")}),
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Server", callback: $.page.show.bind(null, "Servers")}),
                     "main-menu-item-hidden"
                 ),
                 $.styler.append(new $.components.hLine(), "main-menu-line-hidden"),
 
                 // =======     Settings    ======================================
-                $.styler.append(new $.components.mainMenuItem({text: "Settings", callback: $.page.show.bind(null, "Settings")}),
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Settings", callback: $.page.show.bind(null, "Settings")}),
                     "main-menu-item-shown"
                 ),
             ),
@@ -323,6 +326,8 @@ function windowResizeEvent () {
 // ###########################      DOM        ##########################################
 window.addEventListener("DOMContentLoaded", ready, false);
 window.addEventListener("resize", windowResizeEvent, false);
+
+const {ipcRenderer, electron} = require("electron");
 
 function ready () {
     // The dom is ready for adding content ie. document.body (so appendChild() works)

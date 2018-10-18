@@ -21,13 +21,15 @@ $.global.register({
         }
 
         setup () {
+            this.stylesheet();
+
             for (let n in $.pages) {
                 $[n] = new $.pages[n]();
             }
         }
 
         show (id) {
-            // handle main menu
+            // handle main menu items
             $.class.mainMenuItem.map ( (v) => {
                 if (v.menu === id) {
                     // clicked
@@ -46,6 +48,36 @@ $.global.register({
                     $.styler.set(v.refs.text, "main-menu-text-not-selected");
                     v.selected = false;
                 }
+            });
+
+            // show page
+            let lid = id.toLowerCase();
+
+            for (let n in $.id.page) {
+                if ($.id.page.hasOwnProperty(n)) {
+                    if (n === lid) {
+                        console.log(n)
+
+                        $.pages[n].prototype.show();
+                    } else {
+                        $.pages[n].prototype.hide();
+                    }
+                }
+            }
+
+
+        }
+
+        stylesheet() {
+            $.styler.create({
+                "show-page": {
+                    opacity: 1,
+                    pointerEvents: "all",
+                },
+                "hide-page": {
+                    opacity: 0,
+                    pointerEvents: "none",
+                },
             });
         }
     }

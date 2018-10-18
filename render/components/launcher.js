@@ -22,8 +22,9 @@ $.global.register({
         }
 
         create(arg) {
-            return ($.create.div({
-                        // id: arg.id ? arg.id : null,
+            return (
+                $.create.div({
+                        // id: "page_launcher",
                         event: {
                             // click: this.launch.bind(null, "Pack-ID")
                         },
@@ -98,7 +99,6 @@ $.global.register({
                                 "event hover launcher-opt-hover-on/launcher-opt-hover-off",
                             ]}),
                     ),
-
                 )
             )
         }

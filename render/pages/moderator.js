@@ -13,6 +13,24 @@ $.global.register({
     instance: class Moderator {
         constructor(args) {
             // GUI here
+            $.id.content.appendChild(
+                $.create.div({
+                        id: "page.moderator",
+                        styler: "page-launcher"
+                    },
+
+                    // Launcher Test test
+                    $.create.p({textContent: "Mod"})
+                ),
+            )
+        }
+
+        show () {
+            $.styler.set($.id.page.moderator, "show-page");
+        }
+
+        hide () {
+            $.styler.set($.id.page.moderator, "hide-page");
         }
 
         registered() {

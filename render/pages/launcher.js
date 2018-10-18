@@ -13,7 +13,8 @@ $.global.register({
     instance: class Launcher {
         constructor(args) {
             // GUI here
-            $.id.content.appendChild($.create.div({
+            $.id.content.appendChild(
+                $.create.div({
                     id: "page.launcher",
                     styler: "page-launcher"
                     },
@@ -30,15 +31,24 @@ $.global.register({
             this.stylesheet(); // create the stylesheet
         }
 
+        show () {
+            $.styler.set($.id.page.launcher, "show-page");
+        }
+
+        hide () {
+            $.styler.set($.id.page.launcher, "hide-page");
+        }
+
         stylesheet() {
             $.styler.create({
                 "page-launcher": {
-                    widdth: "100%",
+                    position: "absolute",
+                    width: "80%",
                     height: "100%",
                     display: "grid",
                     gridTemplateColumns: "15% auto 15%",
                     gridTemplateRows: "repeat(100, auto)",
-                }
+                },
             });
         }
     }

@@ -13,10 +13,28 @@ $.global.register({
     instance: class Admin {
         constructor(args) {
             // GUI here
+            $.id.content.appendChild(
+                $.create.div({
+                        id: "page.admin",
+                        styler: "page-launcher"
+                    },
+
+                    // Launcher Test test
+                    $.create.p({textContent: "Admin"})
+                ),
+            )
         }
 
         registered() {
             this.stylesheet(); // create the stylesheet
+        }
+
+        show () {
+            $.styler.set($.id.page.admin, "show-page");
+        }
+
+        hide () {
+            $.styler.set($.id.page.admin, "hide-page");
         }
 
         stylesheet() {
