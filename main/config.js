@@ -24,6 +24,7 @@ module.exports = {
             path = file.get(name).path();
             name = file.get(name).name();
         }
+        // console.log(getConfigPath (name, path))
         // gets a config.json
         try {
             return JSON.parse(fs.readFileSync(getConfigPath (name, path)))

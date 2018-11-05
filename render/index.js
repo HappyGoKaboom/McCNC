@@ -93,6 +93,12 @@ function body () {
                     "main-menu-item-shown"
                 ),
                 $.styler.append(new $.components.hLine(), "main-menu-line-shown"),
+                // =======     Instance    ======================================
+                $.styler.append(
+                    new $.components.mainMenuItem({text: "Instance", callback: $.page.show.bind(null, "Instance")}),
+                    "main-menu-item-shown"
+                ),
+                $.styler.append(new $.components.hLine(), "main-menu-line-shown"),
 
                 // =======     Repository    ======================================
                 $.styler.append(
@@ -322,6 +328,18 @@ function windowResizeEvent () {
     }
     $.fire("windowResize", {width: window.innerWidth, height: window.innerHeight, scaler, scalerMin, scalerMax});
 }
+
+const remote = require('electron').remote;
+
+let rightClickPosition = null;
+
+window.addEventListener('click', (ev) => {
+    ev.preventDefault();
+
+    if (ev.ctrlKey) {
+        remote.getCurrentWindow().inspectElement(ev.x, ev.y)
+    }
+}, false);
 
 // ###########################      DOM        ##########################################
 window.addEventListener("DOMContentLoaded", ready, false);

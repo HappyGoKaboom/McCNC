@@ -64,6 +64,7 @@ $.global.register({
                 backColorDarker: "#232933",
                 textColor: "#a5b7d6",
                 textColorVivid: "#79adce",
+                textColorIntense: "#7ad6f5",
                 textColorLighter: "#d1dae6",
                 textColorLight: "#bfcce0",
                 textColorDark: "#859abd",

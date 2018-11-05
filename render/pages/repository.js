@@ -24,8 +24,6 @@ $.global.register({
             );
 
             this.setup = true;
-            // ipcRenderer.send("repo", "hola"); // send back to main process
-
         }
 
         registered() {
@@ -41,8 +39,6 @@ $.global.register({
         }
 
         dropHandler (ev) {
-            console.warn(ev.dataTransfer.files);
-            console.log(this);
             // check file types are valid
 
             // if valid show progress bar
@@ -50,8 +46,6 @@ $.global.register({
             // IPC transfer files
             for (let n in ev.dataTransfer.files) {
                 if (ev.dataTransfer.files.hasOwnProperty(n)) {
-                    console.log(n, ev.dataTransfer.files[n])
-
                     // check exists
                     ipcRenderer.send("repo", {
                         action: "drop",
@@ -78,7 +72,7 @@ $.global.register({
                                 text: uname,
                                 id: "repos."+name,
                                 files: n.files,
-                                folder: n.folders,
+                                folders: n.folders,
                                 drop: $.repository.dropHandler.bind({name: name, path: n.path}),
                                 callback: () => {console.log("REPO "+n.name)}});
 
@@ -88,6 +82,13 @@ $.global.register({
                     }
 
                     $.repository.list = data.data;
+                    break;
+                case "repoItemUpdate":
+                    let name = data.repo.slice(data.repo.lastIndexOf("/")+1).trim().toLowerCase();
+
+                    if ($.id.repos[name]) {
+                        $.id.repos[name].refs.count.textContent = data.files + data.folders;
+                    }
                     break;
             }
         }

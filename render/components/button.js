@@ -23,7 +23,7 @@ $.global.register({
 
         create(arg) {
             return ($.create.div({
-                        id: arg.id ? arg.id : null,
+                        id: arg.id ? arg.id : "",
                         event: {
                             click: arg.callback
                         },
@@ -51,7 +51,7 @@ $.global.register({
                     backgroundColor: "@theme.backColor",
                     color: "@theme.textColor",
                     overflow: "hidden",
-                    height: "24px",
+                    height: "28px",
                     cursor: "default",
                     margin: "2px",
                 },
@@ -69,7 +69,10 @@ $.global.register({
                     fontFamily: "@theme.buttonFont",
                     padding: "0",
                     margin: "auto",
-                    textAlign: "center"
+                    textAlign: "center",
+                    position: "relative",
+                    top: "50%",
+                    transform: "translateY(-50%)",
                 }
             });
         }

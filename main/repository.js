@@ -16,19 +16,16 @@ module.exports = {
         file.mkdir(global.config.DataPath);
 
         // setup repository
-        global.repoPath = global.config.DataPath+"/repository";
+        global.config.repoPath = global.config.DataPath+"repository/";
+        global.repoPath = global.config.repoPath;
 
-        // default repos and configs
-        file.mkdir(global.repoPath);
-        file.mkdir(global.repoPath+"/forge");
-        file.mkdir(global.repoPath+"/mods");
-        file.mkdir(global.repoPath+"/modpacks");
-        file.mkdir(global.repoPath+"/plugins");
-        file.mkdir(global.repoPath+"/configs");
+        // default repos and configs path
+        file.mkdir(global.config.repoPath);
 
         // setup valid file formats for the repos
         // @TODO add check to see if files exists, if so load them unless forced reset is used
-        json.create("forge", global.repoPath, {
+
+        this.create("forge", {
             filetypes: [
                 "jar",
                 "exe",
@@ -36,37 +33,42 @@ module.exports = {
             ],
         });
 
-        json.create("mods", global.repoPath, {
+        this.create("mods", {
             filetypes: [
                 "jar",
+                "exe",
                 "@compressed"
             ],
         });
 
-        json.create("modpacks", global.repoPath, {
+        this.create("modpacks", {
             filetypes: [
                 "jar",
+                "exe",
                 "@compressed"
-            ]
+            ],
         });
 
-        json.create("plugins", global.repoPath, {
+        this.create("plugins", {
             filetypes: [
                 "jar",
+                "exe",
                 "@compressed"
-            ]
+            ],
         });
 
-        json.create("configs", global.repoPath, {
+        this.create("configs", {
             filetypes: [
                 "jar",
+                "exe",
                 "@compressed"
-            ]
+            ],
         });
+
     },
     run: function () {
         const json = global.cfg;
-
+        global.repoPath = global.config.repoPath;
         // runs the repo system and gets the folder list
         global.repoWatcher = fs.watch(global.repoPath, [], this.watcher);
 
@@ -97,24 +99,27 @@ module.exports = {
 
         global.win.webContents.on("did-finish-load",  () => {
             ipcMain.addListener("repo", this.IPC); // add listener
-            console.log(global.repos);
             global.win.webContents.send("repo", {action: "repoList", data: global.repos} ); // send messaage that is returned
         });
     },
-    save: function (filepath, repo) {
-        // saves files to a repository
-
-    },
-    create: function (name) {
+    create: function (name, filetypes) {
+        const json = global.cfg;
         // creates a repository
+        file.mkdir(global.repoPath+"/"+name.toLowerCase());
 
+        json.create(name.toLowerCase(), global.repoPath, filetypes ? filetypes : {
+            filetypes: [
+                "jar",
+                "@compressed"
+            ],
+        });
     },
     delete: function (name) {
         // deletes a repository
-
+        fs.unlinkSync(global.repoPath+"/"+name.toLowerCase());
     },
-    rename: function (filepath, to) {
-
+    rename: function (name, to) {
+        fs.renameSync(global.repoPath+"/"+name.toLowerCase(), to)
     },
     watcher: function (ev, filepath) {
         let type = null;
@@ -122,7 +127,7 @@ module.exports = {
         // check if filepath exists
         if (fs.existsSync(global.config.DataPath+filepath)) {
             // exists so get type
-            let stat = fs.lstatSync(filepath);
+            let stat = fs.lstatSync(global.config.DataPath+filepath);
 
             if (stat.isFile()) {
                 // is file
@@ -143,10 +148,37 @@ module.exports = {
             case "drop":
                 console.log("DROP ", data.what, " TO ", data.to);
 
-                // check exists if so notify IPC renderer
-                let filename = data.what.slice(data.what.lastIndexOf("/")+1);
+                // check if file or folder
+                if (file.get(data.what).isFile()) {
+                    let filename = data.what.slice(data.what.lastIndexOf("/") + 1);
+                    fs.copyFileSync(data.what, data.to + "/" + filename);
+                } else if (file.get(data.what).isFolder()) {
+                    let destination = data.to;
 
-                fs.copyFileSync(data.what, data.to+"/"+filename);
+                    if (data.to.trim().lastIndexOf("/") === data.to.trim().length -1) {
+                        destination += file.get(data.what).folder();
+                    } else {
+                        destination += "/" + file.get(data.what).folder();
+                    }
+
+                    file.get(data.what).copy(destination);
+                }
+
+                // get file n folder count and update client
+                global.win.webContents.send("repo", {action: "repoItemUpdate",
+                    repo: data.to,
+                    files: file.get(data.to).files().length,
+                    folders: file.get(data.to).folders().length
+                    });
+                break;
+            case "get":
+                // gets files from repository
+                let list = file.get(global.repoPath+data.repo).folders();
+
+                global.win.webContents.send(data.ipc, {action: "fileList",
+                    repo: data.repo,
+                    list: list,
+                });
                 break;
         }
     }

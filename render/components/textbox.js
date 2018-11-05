@@ -10,7 +10,7 @@ $.global.register({
     plugins: [],
 
     // instance
-    instance: class c_Switch
+    instance: class c_Textbox
         {
             constructor(args)
                 {
@@ -76,12 +76,12 @@ $.global.register({
                         height: "24px",
                     },
                     "c-textbox-label": {
-                        color: "#6d85a9",
+                        color: "@theme.textColor",
                         fontSize: "12pt",
                         letterSpacing: "0px",
                         fontFamily: "ubuntu",
                         margin: "auto 0px 0px",
-                        padding: "2px"
+                        padding: "2px",
                     },
                     "c-textbox-input": {
                         backgroundColor: "#dfe3ec",

@@ -26,6 +26,7 @@ $.global.register({
         create (args) {
             return (
                 $.create.div({
+                    refs: true,
                     id: args.id,
                     styler: [
                             "repo-container",
@@ -41,10 +42,11 @@ $.global.register({
                     },
                     $.create.p({
                         textContent: args.text,
-                        styler: "repo-text"
+                        styler: "repo-text",
                     }),
                     $.create.p({
-                        textContent: (args.files ? args.files : 0) + (args.folders ? args.folders : 0),
+                        textContent: (args.files ? parseInt(args.files) : 0) + (args.folders ? parseInt(args.folders) : 0),
+                        ref: "count",
                         styler: "repo-text-items"
                     }),
 
