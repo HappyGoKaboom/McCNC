@@ -1,0 +1,19 @@
+{
+
+  "01-Radiation_Storm": {
+
+    "category": "player",
+
+    "sounds": ["customnpcs:music/01-Fallout"]
+
+  },
+
+  "industrial.junk": {
+
+    "category": "player",
+
+    "sounds": ["customnpcs:music/02-Zed"]
+
+  }
+
+}

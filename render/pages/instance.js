@@ -12,7 +12,7 @@ $.global.register({
     // instance
     instance: class Instance {
         constructor(args) {
-            ipcRenderer.on("instance", this.IPC);
+            listenIPC("instance", this.IPC);
 
             // GUI here
             $.id.content.appendChild(
@@ -177,6 +177,7 @@ $.global.register({
                                     styler: "instance-files-subheader",
                                     textContent: "Repo"
                                 }),
+                                $.create.div({id: "instance.repolist"})
                             ),
                             $.create.div({
                                     styler: "instance-files-instance"
@@ -185,8 +186,18 @@ $.global.register({
                                     styler: "instance-files-subheader",
                                     textContent: "Instance"
                                 }),
+                                $.create.div({
+                                    id: "instance.filelist",
+                                    },
+                                    $.id.instance.repolist.appendChild(
+                                        $.styler.append(new $.components.list({
+                                            id: "instance.list.modpack",
+                                            list: {}
+                                        }), "instance-file-list")
+                                    )
+                                )
                             ),
-                            )
+                        )
                     ),
 
                     // Finalize (args, versions and backup)
@@ -210,6 +221,7 @@ $.global.register({
                         $.styler.append(new $.components.button({text: "Done", callback: () => {
                                 // add instance and show it in the launchers section
                             }}), "instance-btn-right"),
+
                         // ---------------------------------
 
                     ),
@@ -222,20 +234,50 @@ $.global.register({
         }
 
         selectRepo (which) {
-            console.log("click")
             // get files for the repo
             ipcRenderer.send("repo", {
                 action: "get",
                 repo: which,
                 ipc: "instance",
             });
-
         }
 
         IPC (ev,data) {
             switch (data.action) {
                 case "fileList":
+                    // create list viewer
+                    $.id.instance.repolist.innerHTML = "";
 
+                    let list = {};
+
+                    for (let n in data.list) {
+                        if (data.list.hasOwnProperty(n)) {
+                            list[n] = {
+                                data: data.list[n],
+                                text: data.list[n].slice(data.list[n].lastIndexOf("/")+1),
+                                select: true,
+                                on: {
+                                    click: (el) => {
+                                        $.id.instance.list.modpack.add($.id.instance.list.modpack, {
+                                            data: data.list[n],
+                                            text: data.list[n].slice(data.list[n].lastIndexOf("/")+1),
+                                            select: true,
+                                            on: {
+                                                click: (el) => {
+                                                },
+                                            }
+                                        });
+                                    },
+                                }
+                            }
+                        }
+                    }
+
+                    $.id.instance.repolist.appendChild(
+                        $.styler.append(new $.components.list({
+                            list: list
+                        }), "instance-file-list")
+                    );
                     break;
             }
         }
@@ -377,6 +419,7 @@ $.global.register({
                     display: "grid",
                     gridTemplateColumns: "4.5% 30% 30% 30% 4.5%",
                     gridColumnGap: "16px",
+                    height: "75%",
                 },
                 "instance-files-add": {
                     gridColumnStart: "2",
@@ -445,6 +488,9 @@ $.global.register({
                     color: (el) => {if (!el.selected) {return "@theme.textColor"}},
                     borderLeft: (el) => {if (!el.selected) {return "6px solid"}},
                     borderColor: (el) => {if (!el.selected) {return "transparent"}}
+                },
+                "instance-file-list": {
+                    height: "calc(100% - 62px)",
                 }
             });
         }

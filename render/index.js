@@ -345,7 +345,7 @@ window.addEventListener('click', (ev) => {
 window.addEventListener("DOMContentLoaded", ready, false);
 window.addEventListener("resize", windowResizeEvent, false);
 
-const {ipcRenderer, electron} = require("electron");
+const {electron} = require("electron");
 
 function ready () {
     // The dom is ready for adding content ie. document.body (so appendChild() works)

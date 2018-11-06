@@ -1,0 +1,16 @@
+[
+  {
+    "name": "copper",
+    "color": "a35309",
+    "blockParts": [
+	],
+	"itemParts": [
+      {
+        "type": "ingot",
+        "oredict": [
+          "ingot:this"
+        ]
+      }
+    ]
+  }
+]

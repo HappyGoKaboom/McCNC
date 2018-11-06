@@ -1,0 +1,45 @@
+{
+    "machine": "life_infuser",
+    "registryName": "infuser_donkey",
+    "recipeTime": 2400,
+    "requirements": [
+        {
+            "type": "item",
+            "io-type": "input",
+            "item": "minecraft:spawn_egg",
+			"nbt": {
+				"EntityTag": {
+					"id": "minecraft:horse"
+				}
+			},
+			"amount": 1
+        },
+		{
+            "type": "item",
+            "io-type": "input",
+            "item": "minecraft:chest",
+            "amount": 16
+        },
+		{
+            "type": "item",
+            "io-type": "input",
+            "item": "skyresources:lifeinfuser@0",
+            "amount": 1
+        },
+        {
+			"type": "item",
+			"io-type": "output",
+			"item": "minecraft:spawn_egg",
+			"nbt": {
+				"EntityTag": {
+					"id": "minecraft:donkey"
+				}
+			},
+			"amount": 1
+		}
+    ]
+	
+
+
+
+}

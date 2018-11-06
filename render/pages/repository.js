@@ -12,7 +12,7 @@ $.global.register({
     // instance
     instance: class Repository {
         constructor(args) {
-            ipcRenderer.on("repo", this.IPC);
+            listenIPC("repo", this.IPC);
 
             // GUI here
             $.id.content.appendChild(

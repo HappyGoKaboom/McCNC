@@ -1,0 +1,6 @@
+
+{
+  "Name": "newCow",
+  "Registry ID": "betteranimals:newcow",
+  "Class": "com.hypeirochus.betteranimals.entity.EntityNewCow"
+}

@@ -57,6 +57,7 @@ app.on('activate', () => {
 });
 
 function createWindow() {
+
     // Create the browser window.
     global.win = new BrowserWindow({
         'node-integration': true,

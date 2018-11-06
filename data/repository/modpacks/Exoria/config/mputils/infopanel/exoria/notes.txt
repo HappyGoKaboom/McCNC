@@ -1,0 +1,7 @@
+Welcome to Exoria!
+
+1.) Press "Grave" to open your quest book (feel free to change in your Better Questing keybinds)
+
+2.) In the rare case that no portal spawned at spawn upon world creation, make sure to create a new world.
+
+3.) Travelling to a new dimension for the first time will create some lag, make sure to wait a bit until the chunks around you are generated. In Singleplayer you can lower the Render Distance to speed the process up.

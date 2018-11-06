@@ -1,0 +1,279 @@
+{
+  "outputs": [
+    {
+      "target": "crystal",
+      "weight": 5,
+      "id": "environmentaltech:litherite_crystal"
+    },
+	{
+      "target": "crystal",
+      "weight": 7,
+      "id": "environmentaltech:erodium_crystal"
+    },
+    {
+      "target": "crystal",
+      "weight": 9,
+      "id": "environmentaltech:kyronite_crystal"
+    },
+    {
+      "target": "crystal",
+      "weight": 11,
+      "id": "environmentaltech:pladium_crystal"
+    },
+    {
+      "target": "crystal",
+      "weight": 13,
+      "id": "environmentaltech:ionite_crystal"
+    },
+    {
+      "target": "crystal",
+      "weight": 15,
+      "id": "environmentaltech:aethium_crystal"
+    },
+	{
+      "target": "white",
+      "weight": 50,
+      "id": "thermalfoundation:material:0"
+    },
+    {
+      "target": "yellow",
+      "weight": 20,
+      "id": "thermalfoundation:material:1"
+    },
+    {
+      "target": "orange",
+      "weight": 40,
+      "id": "thermalfoundation:material:64"
+    },
+    {
+      "target": "gray",
+      "weight": 40,
+      "id": "thermalfoundation:material:65"
+    },
+    {
+      "target": "silver",
+      "weight": 25,
+      "id": "thermalfoundation:material:66"
+    },
+    {
+      "target": "purple",
+      "weight": 25,
+      "id": "thermalfoundation:material:67"
+    },
+    {
+      "target": "white",
+      "weight": 15,
+      "id": "thermalfoundation:material:68"
+    },
+    {
+      "target": "gray",
+      "weight": 15,
+      "id": "thermalfoundation:material:69"
+    },
+    {
+      "target": "cyan",
+      "weight": 10,
+      "id": "terraqueous:item_main:209"
+    },
+    {
+      "target": "lime",
+      "weight": 8,
+      "id": "terraqueous:item_main:211"
+    },
+    {
+      "target": "black",
+      "weight": 8,
+      "id": "magneticraft:dusts:5"
+    },
+    {
+      "target": "light_blue",
+      "weight": 5,
+      "id": "thermalfoundation:material:70"
+    },
+    {
+      "target": "red",
+      "weight": 50,
+      "id": "minecraft:redstone"
+    },
+    {
+      "target": "yellow",
+      "weight": 35,
+      "id": "minecraft:glowstone_dust"
+    },
+    {
+      "target": "pink",
+      "weight": 15,
+      "id": "magneticraft:dusts:14"
+    },
+    {
+      "target": "purple",
+      "weight": 5,
+      "id": "thermalfoundation:material:72"
+    },
+    {
+      "target": "blue",
+      "weight": 8,
+      "id": "exnihilocreatio:item_ore_cobalt:2"
+    },
+    {
+      "target": "orange",
+      "weight": 8,
+      "id": "exnihilocreatio:item_ore_ardite:2"
+    },
+    {
+      "target": "white",
+      "weight": 20,
+      "id": "actuallyadditions:item_dust:5"
+    },
+    {
+      "target": "light_blue",
+      "weight": 20,
+      "id": "appliedenergistics2:material:2"
+    },
+    {
+      "target": "black",
+      "weight": 8,
+      "id": "actuallyadditions:item_dust:7"
+    },
+    {
+      "target": "light_blue",
+      "weight": 5,
+      "id": "forestry:apatite"
+    },
+    {
+      "target": "light_blue",
+      "weight": 10,
+      "id": "forestry:phosphor"
+    },
+    {
+      "target": "pink",
+      "weight": 5,
+      "id": "biomesoplenty:gem:0"
+    },
+    {
+      "target": "red",
+      "weight": 5,
+      "id": "biomesoplenty:gem:1"
+    },
+    {
+      "target": "green",
+      "weight": 5,
+      "id": "biomesoplenty:gem:2"
+    },
+    {
+      "target": "orange",
+      "weight": 5,
+      "id": "biomesoplenty:gem:3"
+    },
+    {
+      "target": "purple",
+      "weight": 5,
+      "id": "biomesoplenty:gem:4"
+    },
+    {
+      "target": "cyan",
+      "weight": 5,
+      "id": "biomesoplenty:gem:5"
+    },
+    {
+      "target": "blue",
+      "weight": 5,
+      "id": "biomesoplenty:gem:6"
+    },
+    {
+      "target": "orange",
+      "weight": 5,
+      "id": "biomesoplenty:gem:7"
+    },
+    {
+      "target": "blue",
+      "weight": 15,
+      "id": "actuallyadditions:item_dust:4"
+    },
+    {
+      "target": "black",
+      "weight": 50,
+      "id": "thermalfoundation:material:768"
+    },
+    {
+      "target": "orange",
+      "weight": 5,
+      "id": "terraqueous:item_main:251"
+    },
+    {
+      "target": "purple",
+      "weight": 10,
+      "id": "thermalfoundation:material:770"
+    },
+    {
+      "target": "yellow",
+      "weight": 4,
+      "id": "thermalfoundation:material:771"
+    },
+    {
+      "target": "white",
+      "weight": 8,
+      "id": "thermalfoundation:material:772"
+    },
+    {
+      "target": "cyan",
+      "weight": 6,
+      "id": "minecraft:prismarine_shard"
+    },
+    {
+      "target": "cyan",
+      "weight": 10,
+      "id": "terraqueous:item_main:201"
+    },
+    {
+      "target": "black",
+      "weight": 10,
+      "id": "mist:filter_coal"
+    },
+    {
+      "target": "lime",
+      "weight": 5,
+      "id": "mist:bio_shale"
+    },
+    {
+      "target": "light_gray",
+      "weight": 25,
+      "id": "mist:niobium_ingot"
+    },
+    {
+      "target": "red",
+      "weight": 10,
+      "id": "deepresonance:resonating_ore"
+    },
+    {
+      "target": "gray",
+      "weight": 30,
+      "id": "fp:erze:4"
+    },
+    {
+      "target": "white",
+      "weight": 2,
+      "id": "astralsorcery:blockcustomore"
+    },
+    {
+      "target": "white",
+      "weight": 3,
+      "id": "thermalfoundation:material:71"
+    },
+    {
+      "target": "purple",
+      "weight": 5,
+      "id": "libvulpes:productdust:7"
+    },
+    {
+      "target": "pink",
+      "weight": 7,
+      "id": "libvulpes:productdust"
+    },
+    {
+      "target": "black",
+      "weight": 5,
+      "id": "environmentaltech:lonsdaleite_crystal"
+    }
+  ]
+}

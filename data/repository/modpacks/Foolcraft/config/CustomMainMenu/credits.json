@@ -1,0 +1,355 @@
+{
+    "images":
+    {
+        "title":
+        {
+            "image" : "mainmenu:FC3_Full.png",
+            "posX" : -245,
+            "posY" : 10,
+            "width" : 100,
+            "height" : 33,
+            "alignment" : "top_center"
+        }
+    },
+    
+    "buttons":
+    {
+        "creditlist":
+        {
+            "text" : "Back",
+            "posX" : -120,
+            "posY" : 20,
+            "width" : 98,
+            "height" : 20,
+			"alignment" : "top_right",
+			"texture" : "mainmenu:shortbutton.png",
+            "action" :
+            {
+                "type" : "openGui",
+                "gui" : "mainmenu"
+            }
+        }
+	},
+	"labels":
+    {
+        "CreditsStart":
+        {
+            "text" : "FoolCraft 3 was developed over several months. A lot of people helped out, many thanks to this special bunch",
+            "posX" : -245,
+            "posY" : 45,
+			"fontSize" : .5,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"ManyThanks":
+        {
+            "text" : "To all of you who spent endless nights bug testing and trying to break the pack, a massive green thank you! <3",
+            "posX" : -245,
+            "posY" : 52,
+			"fontSize" : .5,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name":
+        {
+            "text" : "Douwsky",
+            "posX" : -240,
+            "posY" : 60,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name2":
+        {
+            "text" : "Damnsecci",
+            "posX" : -240,
+            "posY" : 68,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name3":
+        {
+            "text" : "Aolsen",
+            "posX" : -240,
+            "posY" : 76,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name4":
+        {
+            "text" : "CrazyAboutMaths",
+            "posX" : -240,
+            "posY" : 84,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name5":
+        {
+            "text" : "RokoYoshika",
+            "posX" : -240,
+            "posY" : 92,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name6":
+        {
+            "text" : "Demonborn1991",
+            "posX" : -240,
+            "posY" : 100,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name7":
+        {
+            "text" : "K00lknight7",
+            "posX" : -240,
+            "posY" : 108,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name8":
+        {
+            "text" : "Blokies",
+            "posX" : -240,
+            "posY" : 116,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name9":
+        {
+            "text" : "Gunde__Man",
+            "posX" : -240,
+            "posY" : 124,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name10":
+        {
+            "text" : "Kendirk",
+            "posX" : -240,
+            "posY" : 132,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name11":
+        {
+            "text" : "PCTheWolf",
+            "posX" : -240,
+            "posY" : 140,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name12":
+        {
+            "text" : "Rustbite",
+            "posX" : -240,
+            "posY" : 148,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name13":
+        {
+            "text" : "SketchySilver96",
+            "posX" : -240,
+            "posY" : 156,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name14":
+        {
+            "text" : "TJPlaysNow",
+            "posX" : -240,
+            "posY" : 164,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name15":
+        {
+            "text" : "vaalkaar",
+            "posX" : -240,
+            "posY" : 172,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name16":
+        {
+            "text" : "XrAyZUK",
+            "posX" : -240,
+            "posY" : 180,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name17":
+        {
+            "text" : "Mrbysco",
+            "posX" : -240,
+            "posY" : 188,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name18":
+        {
+            "text" : "svennikie",
+            "posX" : -240,
+            "posY" : 196,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name19":
+        {
+            "text" : "awollangk",
+            "posX" : -240,
+            "posY" : 204,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name20":
+        {
+            "text" : "kimandjax",
+            "posX" : -240,
+            "posY" : 212,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name21":
+        {
+            "text" : "minepro4910",
+            "posX" : -240,
+            "posY" : 220,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name22":
+        {
+            "text" : "Lowndsy2011",
+            "posX" : -240,
+            "posY" : 228,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name23":
+        {
+            "text" : "wildtrekker",
+            "posX" : -240,
+            "posY" : 236,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name24":
+        {
+            "text" : "KaptainWutax",
+            "posX" : -240,
+            "posY" : 244,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name25":
+        {
+            "text" : "Thorzy",
+            "posX" : -240,
+            "posY" : 252,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name26":
+        {
+            "text" : "KieransShows",
+            "posX" : -240,
+            "posY" : 260,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name27":
+        {
+            "text" : "HelsRealMagic",
+            "posX" : -140,
+            "posY" : 60,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name28":
+        {
+            "text" : "King_Crikey",
+            "posX" : -140,
+            "posY" : 68,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        },
+		"name29":
+        {
+            "text" : "RumSoakedChicken (Rly?)",
+            "posX" : -140,
+            "posY" : 76,
+			"fontSize" : .6,
+            "color" : -1,
+			"hoverColor" : -1,
+            "alignment" : "top_center"
+        }
+	},
+	
+	 "other":
+    {
+		"background":
+		{
+			"image" : "mainmenu:background.png",
+			"mode" : "fill"
+		}
+    }
+}

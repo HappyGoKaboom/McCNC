@@ -1,0 +1,40 @@
+{
+	"name": "compactmachines3:rftoolsframe",
+	"target-item": "rftools:machine_frame",
+	"target-meta": 0,
+	"target-count": 1,
+
+	"duration": 440,
+
+	"catalyst": "biomesoplenty:gem",
+	"catalyst-meta": 5,
+	"input-types": {
+		"a": { "id": "embers:item_pipe", "meta": 0 },
+		"b": { "id": "minecraft:stained_glass_pane", "meta": 7 },
+		"c": { "id": "minecraft:stained_glass", "meta": 7 },
+		"d": { "id": "thermalfoundation:storage", "meta": 8 }
+	},
+
+	"symmetrical": true,
+	"shape": [
+		[
+			["a","a","a"],
+			["a","c","a"],
+			["a","a","a"]
+		],
+		[
+			["a","b","a"],
+			["b","d","b"],
+			["a","b","a"]
+		],
+		[
+			["a","a","a"],
+			["a","c","a"],
+			["a","a","a"]
+		]
+	]
+}
+
+
+
+

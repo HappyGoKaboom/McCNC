@@ -1,0 +1,40 @@
+{
+    "machine": "life_infuser",
+    "registryName": "infuser_rabbit",
+    "recipeTime": 2400,
+    "requirements": [
+        {
+            "type": "item",
+            "io-type": "input",
+            "item": "minecraft:egg",
+            "amount": 1
+        },
+		{
+            "type": "item",
+            "io-type": "input",
+            "item": "minecraft:carrot",
+            "amount": 16
+        },
+		{
+            "type": "item",
+            "io-type": "input",
+            "item": "skyresources:redsandstoneinfusionstone@0",
+            "amount": 1
+        },
+        {
+			"type": "item",
+			"io-type": "output",
+			"item": "minecraft:spawn_egg",
+			"nbt": {
+				"EntityTag": {
+					"id": "minecraft:rabbit"
+				}
+			},
+			"amount": 1
+		}
+    ]
+	
+
+
+
+}

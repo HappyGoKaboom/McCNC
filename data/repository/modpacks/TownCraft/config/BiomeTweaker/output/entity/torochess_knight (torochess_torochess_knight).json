@@ -1,0 +1,6 @@
+
+{
+  "Name": "torochess_knight",
+  "Registry ID": "torochess:torochess_knight",
+  "Class": "net.torocraft.chess.entities.knight.EntityKnight"
+}

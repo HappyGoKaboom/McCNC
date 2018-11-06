@@ -1,20 +1,13 @@
-// Main Process IPC
-// Exports call function to Render process that allows the render process to call any function in the main process
-exports.call = (call, args) => {
-    try {
-        global[call].call(null, args);
-        } 
-    catch (error) 
-        {
-        console.log("IPC.call Failed: " + call);
+// IPC functions
+const crypto = require('crypto');
+
+module.exports = {
+    send: (channel, data) => {
+            // generated a timestamp for checking
+            let hash = crypto.createHash("sha256");
+                hash.update(JSON.stringify(data));
+
+            data.hash = hash.digest('hex');
+            global.win.webContents.send(channel, data);
         }
-};
-
-exports.send = () => {
-    win.webContents.send("abc1", "foo");
-    win.webContents.send("abc2", "foo");
-};
-
-exports.withRendererCallback = (mapper) => {
-    return "hello";
 };

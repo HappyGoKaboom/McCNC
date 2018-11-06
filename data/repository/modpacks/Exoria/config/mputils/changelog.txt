@@ -1,0 +1,893 @@
+§n1.3.0c (2018/07/20)§r
+
+HOTFIX for Diamond Tools
+- Reverted Diamond Tools to old recipes before Primal Core update
+- Changed recipes that required Diamond Tools
+- Disabled Fluid Compound Producer
+- Added Elytra recipe
+
+
+§n1.3.0b (2018/07/20)§r
+
+HOTFIX for dedicated servers
+- Reverted to the old Vacuum Tube recipe that got changed on mod update
+
+§lUpdated mods:§r
+
+- Click Machine
+
+
+§n1.3.0 (2018/07/19)§r
+
+- Several bugs fixed through mod updates
+- Edited some quests
+- Disabled Yabba from CarryOn as the barrels can be broken with retaining inventory anyway
+- Changed CraftBench recipe
+- Added Knightslime recipe to also be able to use Molten Signalum
+- Removed Garden Trowel
+- Fishes don't spawn in Voidcraft Liquids anymore
+- OreDicted Coal Coke in Carbon Brick recipe
+- Reduced Glass amount from Glass shards
+- Unhid several items that were unintentionally hidden
+- Added Restriction to Misty World Portal Blocks to prevent exploit
+- Fixed Lacquer Fluid Transposer recipe
+- Re-enabled IE Blueprint recipes
+
+
+§lAdded mods:§r
+
+- Click Machine
+
+§lRemoved mods:§r
+
+- Simple Harvest
+
+§lUpdated mods:§r
+
+- Advanced Rocketry
+- Astral Sorcery
+- Autoverse
+- Better Builder's Wands
+- Bibliocraft
+- Binnie's Mods
+- Chisels & Bits
+- Code Chicken Lib
+- Connected Textures Mod
+- CraftTweaker
+- Cucumber
+- Cyclops Core
+- Deep Resonance
+- Ender Storage
+- Environmental Tech
+- Everlasting Abilities
+- Exchangers
+- Extended Crafting
+- Flexible Tools
+- Forestry
+- Guide-API
+- Immersive Engineering
+- Industrial Foregoing
+- Iron Chests
+- Item Scroller
+- JEI
+- LibVulpes
+- McJtyLib
+- MTLib
+- Oreberries
+- Placebo
+- PrimalCore
+- RandomPatches
+- RFTools
+- RFTools Control
+- Sky Resources 2
+- Storage Drawers
+- Survivalist
+- Tesla Core Lib
+- The Lost Cities
+- Toast Control
+- TOP Addons
+- ValkyrieLib
+- Vanilla Automation
+- Vanilla Immersion
+- Waystones
+- Wearable Backpacks
+- XL Food Mod
+- XNet
+- YABBA
+
+
+§n1.2.1 (2018/06/17)§r
+
+- Fixed Glass Casting issue from last update
+- Resolved recipe conflict from latest Soot update (Wrought Iron Tile)
+- Added all saplings to the crucible
+
+§lUpdated mods:§r
+
+- Ignition: Foundry
+
+
+§n1.2.0 (2018/06/15)§r
+
+- Added recipe for Advanced Pressure Valve
+- Changed recipe for Mob Imprisonment Tool
+- Changed AFK message to 180 seconds
+- Changed Barrel Connector recipe
+- Re-Added Smeltery Drain
+- Added Metal Press Dawnstone Plate recipe
+- Enabled Hiveacynth
+- Removed default Boreal and Dry Pasture Seeds recipes
+- Fixed "Above the Void" quest
+- Changed Mass Detector recipe
+- Switched Planet Research to 100% success rates
+- Disabled Forestry Greenhouse
+- Resolved recipe conflicts of Manasteel Grafter and Paper Cup
+- Added Magneticraft Cobalt to Empowered Palis recipe
+- Added Redstone Furnace Smelting of Ardite Dust
+- Unified Stamper recipes
+- Fixed TE Sawmill recipes for vanilla wood
+- Fixed Autumn Rune not requiring Spider Eye
+- Fixed Crystal Lens now having an effect
+- Added ET Guide as quest reward
+- Fixed last quest
+
+
+§lRemoved mods:§r
+
+- VanillaFix
+
+§lUpdated mods:§r
+
+- Advanced Rocketry
+- AppleCore
+- Astral Sorcery
+- Backpacks!
+- Bookshelf
+- CodeChickenLib
+- CoFH Core
+- CoFH World
+- Compact Machines
+- Connected Textures Mod
+- Deep Resonance
+- Ender Storage
+- EnvironmentalTech
+- Extended Crafting
+- Flexible Tools
+- Forestry
+- FTB Utilities
+- FTBLib
+- ImmersiveCraft
+- ImmersiveTech
+- Industrial Foregoing
+- JEI
+- LibVulpes
+- McJtyLib
+- Misty World
+- MTLib
+- RandomPatches
+- Redstone Arsenal
+- Redstone Flux
+- RFTools
+- RFTools Control
+- ShetiPhianCore
+- Simply Jetpacks 2
+- Soot
+- The Lost Cities
+- The One Probe
+- Thermal Cultivation
+- Thermal Dynamics
+- Thermal Expansion
+- Thermal Foundation
+- Tinker's Construct
+- TOP Addons
+- ValkyrieLib
+- Woot
+- XNet
+- YABBA
+
+
+§n1.1.0 (2018/05/31)§r
+
+- Updated Forge to 2705
+- Added quest that explains how Filter Coal pollution works
+- Removed Gunpowder Mana Infusion recipe
+- Removed Mana Fluxfield recipe
+- Added Bauxite Ore recipe for Futurepack completionists
+- Added Clay Water Bucket Dough recipe
+- Removed superfluous Sky Resources Life Infusion and Combustion recipes
+- Fixed Casting of Seared Stone to use the correct mold
+- Removed crafting recipes for Bronze and Electrum dust blends
+- Fixed accidently uncraftable Advanced Generators Turbines
+- Changed several recipes to replace (Fermented) Spider Eyes
+- Changed Botania Magnetizing Lens recipe
+- Removed slimeball ore dictionary from pink slimes
+- Removed mob spawns below the mist in the Misty World
+- Made Ender Dust work in Compacting Drawer
+- Made Fishing Rod craftable
+- Added recipes to the Mixer Centrifuge when you mix "molten metals" with "liquid metals"
+- Removed Bucket to be smelted down to Iron in Induction Smelter
+- Reworded some quest texts
+
+§lUpdated mods:§r
+
+- Actually Additions
+- Advanced Rocketry
+- Bibliocraft
+- Binnie's Mods
+- BNBGamingLib
+- CarryOn
+- Crafting Tweaks
+- Cyclops Core
+- Ender Storage
+- Extended Crafting
+- Forestry
+- FTBUtils
+- FTBLib
+- Immersive Engineering
+- Immersive Tech
+- Industrial Foregoing
+- JEI
+- LibVulpes
+- LimeLib
+- Magic Bees
+- Modtweaker
+- Modular Machinery
+- Placebo
+- ReAuth
+- Refined Storage
+- Simply Jetpacks 2
+- Sky Resources 2
+- Tinker's Construct
+- Toast Control
+- Tomb Many Graves 2
+- VanillaFix
+- Waystones
+- XL Food Mod
+- YABBA
+
+
+§n1.0.2 (2018/05/21)§r
+
+
+§lUpdated mods:§r
+
+- Chisel & Bits (fixes shift click crash)
+- VanillaFix (fixes random fall damage)
+
+
+§n1.0.1 (2018/05/18)§r
+
+- Removed Ex Nihilo Endstone recipe
+- Reduced yield for Condenser ET crystals
+- Removed Cobweb recipe
+- Clarified a bunch of early game quest texts
+
+
+§lAdded mods:§r
+
+- VanillaFix
+
+
+§n1.0.0 (2018/05/15)§r
+
+- Updated Forge to 2688
+- Changed Launch Pad recipe
+- Changed XNet recipes and added a quest for it
+- Add Capability Proxy quest
+- Foundry Bullet Casing changed from Brass to Copper
+- Added Redstone Furnace recipes
+- Clarified some quest texts
+- Fixed Neon Sand Meta Data for ET Resource Miner
+- Made Hard Foggy Stone Layer less thick
+- Added Furnace Salt recipe
+- Oredicted Crushing Table Plate recipes
+- Added Embers Melting and Mixing recipes
+- Added tons of bees
+
+
+§lAdded mods:§r
+
+- Login Shield
+
+§lUpdated mods:§r
+
+- Astral Sorcery
+- BiomeTweaker
+- BiomeTweakerCore
+- EnvironmentalTech
+- Foamfix
+- JEI
+- StepUp
+- ValkyrieLib
+
+
+§n0.4.3 (2018/05/06)§r
+
+- Updated Forge to 2678
+- Removed crafting recipes of rods as they can be made with Foundry now and removed OreDict of IronStick
+- Added recipes for Strainer Nets to be crafted with string
+- Added melting of Ore Rocks to Magma Crucible
+- Enabled Vanilla Tree Growth to Misty World
+- Removed bugged torch recipes
+- Detection of Flexible Tools should finally work
+- Added OreDict to Alfglass recipe and added recipe to convert Minecraft Glass to Clear Glass
+- Added missing TE Tank recipe
+- Added Crafting recipe for Resonating Wand in normal table in case you lose the one from the reward
+- Added Nutrition for Coconut and Life Fruit
+- Changed Mana Steel Block recipe to use Steel
+- Fixed Medium Battery recipe
+- Changed Crushed Magmarack to 100% in Rock Crusher
+- Added Bee Combs to Rock Crusher
+- Added recipes to craft slabs back to blocks
+- Changed some quest descriptions
+- Added MPUtils Important Notes
+- Re-Added Reload Quests Quest
+- Removed Stone Torches
+
+
+§lAdded mods:§r
+
+- Buildcraft Compat
+
+§lRemoved mods:§r
+
+- LootTweaker
+
+§lDowngraded mods:§r
+
+- Journeymap
+
+§lUpdated mods:§r
+- Additional Pipes
+- Advanced Rocketry
+- Backpacks
+- Binnies
+- BNBGamingLib
+- Bookshelf
+- Botania
+- Buildcraft
+- CodeChickenLib
+- CoFH Core
+- Compact Machines
+- CraftTweaker
+- Dimensional Control
+- Everlasting Abilities
+- Flexible Tools
+- Forestry
+- Futurepack
+- GameStages
+- Immersive Engineering
+- Immersive Tech
+- Industrial Foregoing
+- JEI
+- Just Enough Dimensions
+- Misty World
+- Modular Machinery
+- Powered Thingies
+- Primal Core
+- Primitive Mobs
+- Redstone Arsenal
+- Scavenge
+- Simply Jetpacks
+- StepUp
+- TeslaCoreLib
+- Thermal Cultivation
+- Thermal Dynamics
+- Thermal Expansion
+- Thermal Foundation
+- Tomb Many Graves
+- TOP Addons
+- Waystones
+- Woot
+
+
+§n0.4.2 (2018/05/01)§r
+
+- Reduced Acid Lake Spawn Rate
+- Made Portal Generation more likely
+- Rod Smelting with Foundry is more coherent
+- Disabled Redstone/Glowstone conversion with Alchemy Catalyst
+- Fixed Copper Coil Quest not recognizing
+- Added Terraqueous Logs to Chopping Block
+- Fixed Advanced Crafting Table recipe
+- Changed Cobalt and Ardite quest to require only 1 of each
+- Moved around Quest order in Power Up Quest Line a bit
+- Removed Crafting of Primal Plates
+- Removed Terraqueous Dust Hammer recipes
+- Removed Bee House Flower requirement
+- Changed recipe of Pressure Refinery
+- Increased percentage of getting Queens with Bee Attractor
+- Added more seeds to make Seed Oil in Crucible
+
+§lUpdated mods:§r
+- Advanced Rocketry
+- LibVulpes
+
+§n0.4.1 (2018/04/29)§r
+
+- Fixed Bane of Trees
+- Enabled vanilla armour recipes again
+- Added Dried Fish and Dead Bush to Drying Rack
+- Added Block Requirement to Craftfurnace
+- Disabled ImmersiveCraft Furnace and enabled the Strainer to be picked up
+- Disabled dying from "blunt force trauma"
+- Disabled Farmland dropping mud
+- Disabled Cutting Knives
+- Removed the IE Hammer Plate recipes (again?)
+- Breaking Grass drops now ocassionally onions
+- Onion Salad nutrients fixed
+- Added early game Apiary recipe and added a quest for it
+- Reduced Warpstone Cooldown to 10 seconds and removed Waystone XP requirement
+- Added some text to quests
+- Changed In-game Bugtracker URL
+
+§lAdded mods:§r
+
+- Harvestables
+- Random Patches
+- Toast Control (which apparently removed itself at some point)
+
+§lUpdated mods:§r
+- Foamfix
+
+§lRemoved mods:§r
+- Simple Harvest
+
+
+§n0.4.0 (2018/04/26)§r
+
+- Beta Release
+
+§lAdded mods:§r
+- Defiled Lands
+- KJLib
+- Lost Cities
+
+§lUpdated mods:§r
+- almost every mod (too many to list)
+
+§lRemoved mods:§r
+- Aqua Munda
+- Modular Diversity
+- Simply Tea
+
+§n0.3.0 (2018/01/26)§r
+
+- Updated Forge to 2599
+- All the Misty Progression with all the Power Mods!
+- Disabled Recipe Locking in favour of Recipe Stages
+- Balanced recipes of Crafting Tables, Chests and Furnaces
+- Fixed Just A Few Fish Spawning
+- Increased Time until Grue spawns
+- Readded Coffee and Canola Seeds to Grass Breaking
+- Drastically reduced Phosphor and Black Quartz sieve drops
+- Disabled some gear recipes
+- Lowered Melting Temperature of Glass
+- Added Foundry Melting and Casting of Stone
+- Increased the processing time of all the Kiln Alloys
+- Added Flexible Sword recipe (texture currently broken)
+- Increased some hostile mob rates
+
+§lAdded mods:§r
+- Additional Pipes
+- Drones
+- Game Stages
+- Multiblock Stages
+- Open Blocks
+- OpenModsLib
+- Primitive Mobs
+- Recipe Stages
+- Simply Jetpacks
+
+§lRemoved mods:§r
+- Bad Wither No Cookie
+- CompatLayer
+- Ender Crop
+- Piston Compression
+- Real Filing Cabinet
+- Totem Essentials
+
+§lUpdated mods:§r
+- Actually Additions
+- Advanced Generators
+- Advanced Rocketry
+- Applied Energistics
+- Astral Sorcery
+- Backpacks
+- Baubles
+- BDLib
+- Binnie's Mods
+- Biomes O' Plenty
+- Bookshelf
+- Carry On
+- Chisel
+- Chisels & Bits
+- COFH Core
+- COFH World
+- Compact Machines
+- Connected Textures Mod
+- Controlling
+- Cucumber
+- Cyclops Core
+- Ex Nihilo Creatio
+- Exchangers
+- Forestry
+- Gendustry
+- Ignition: Foundry
+- Immersive Engineering
+- Immersive Petroleum
+- In Control
+- Industrial Foregoing
+- JEI
+- Journeymap
+- LibVulpes
+- Magic Bees
+- McJtyLib
+- Misty World
+- Modular Machinery
+- Placebo
+- PrimalCore
+- Recurrent Complex
+- Redstone Arsenal
+- Refined Storage
+- RFTools
+- Scavenge
+- ShetiPhianCore
+- Soot
+- Storage Drawers
+- Structured Crafting
+- Terraqueous
+- Thermal Cultivation
+- Thermal Dynamics
+- Thermal Expansion
+- Thermal Foundation
+- TickProfiler
+- Tinkers Contruct
+- Transprot
+- Woot
+- XNet
+
+
+§n0.2.4 (2017/12/29)§r
+
+- Updated Forge to 2582
+- Changed all Sarsen Stone recipes as the slabs got removed
+- Switched Carry On to a whitelist
+- Removed Porcelain Clay quest in favor of a new Tinkers Channel quest
+- Botania recipes implemented and Temp Trades chapter removed
+- Integrated Waystones
+- Added Oreberries quest
+- Changed Lacquer wood processing to use the new cauldron
+- Changed Embers Dial recipes
+- Fixed Compacting recipes for Coal Dust
+- Added recipes to get the molds back from Casting Table
+- Changed Wooden Box recipe
+- Changed Clipboard recipe
+- Sawmill consumes Saw now
+- Unified some Crushing Table recipes and added Bronze Plates
+- Changed Core Dimension World Gen and added mobs to it
+
+§lAdded mods:§r
+- Waystones
+
+§lUpdated mods:§r
+- Advanced Rocketry
+- Aqua Munda
+- Binnies Mods
+- BNBGamingLib
+- Bookshelf
+- Buildcraft
+- Capability Proxy
+- Chisel
+- Crafttweaker
+- Cyclops Core
+- Deep Resonance
+- EnvironmentalTech
+- Extended Crafting
+- Flexible Tools
+- Forestry
+- Futurepack
+- ImmersiveCraft
+- Industrial Foregoing
+- Journeymap
+- LibVulpes
+- McJtyLib
+- Misty World
+- Modtweaker
+- Nature's Compass
+- Placebo
+- Primal Core
+- Refined Storage
+- RFTools
+- RFTools Control
+- Terraqueous
+- ValkyrieLib
+- Vanilla Automation
+- XNet
+
+
+
+§n0.2.3 (2017/12/19)§r
+
+- Fixed Treated Wood recipe
+- Fixed Storage Drawer Upgrade recipe
+- Fixed Pulverized Coal recipe
+- Removing Redstone from Botania Crafting Pattern recipe
+- Reverting the Terraqueous Scavenge Fix
+- Increased Fairies/Pixies/Ancient Golem spawns in attempt to fix server spawn rates
+- Changed Hardened Stone requirement for SkyResources Casing to Concrete
+- Made Axle recipe cheaper
+- Made BC Wrench recipe cheaper
+- Changed BC Iron Pipe to Chalk pipe
+- Enabled Dawnstone Ingot/Nuggets/Block crafting conversion
+- Configured Seed Drops
+- Added Bed Quest
+- Added lit furnace to restrictions
+- Moved Sluice Quest as Magneticraft bug is fixed
+- Added other saws to slab recipes
+
+§lUpdated mods:§r
+- Actually Additions
+- Advanced Rocketry
+- Apple Core
+- Advanced Rocketry
+- Bookshelf
+- Botania
+- Chisel
+- CodeChickenLib
+- Controlling
+- Cyclops Core
+- Deep Resonance
+- Ender Storage
+- Environmental Tech
+- Everlasting Abilities
+- Foamfix
+- Forestry
+- Industrial Foregoing
+- JEI
+- LibVulpes
+- Magneticraft
+- Misty World
+- Powered Thingies
+- Refined Storage
+- Restriction
+- RFTools
+- Roots
+- Structured Crafting
+- Swing Through Grass
+- Tesla Core Lib
+- Tinker's Construct
+- Toast Control
+- Valkyrie Lib
+- Vanilla Automation
+- Woot
+- XNet
+
+
+
+§n0.2.2 (2017/12/11)§r
+
+- Double Cob recipe output
+- Adjusted some Flexible Tools upgrades to fit
+- Hopefully removed the Ash to Coal recipe this time
+- Removed the Adobe Brick recipe from Earthworks
+- Removed the AR Coil recipe for now
+- Fixed the low tier Condenser recipes
+- Removed cheaty duplicate Copper smelting recipe
+- Removed Tinkers Casting Devices
+- Adjusted and added Modular Machinery recipes
+- Added Scavenge sounds
+- Fixed some quest wordings
+
+§lUpdated mods:§r
+- Scavenge
+
+§lRemoved mods:§r
+- UniDict
+- WanionLib
+
+
+
+§n0.2.1 (2017/12/08)§r
+
+- Updated to Forge 2561
+- Fixed some seeds popping off
+- Fixed Banana Sapling not dropping
+- Terra Clay Block craftable
+- Removed the bulk trade
+- Used the correct faucet for the Foundry quest
+
+§lUpdated mods:§r
+- Actually Additions
+- Aqua Munda
+- Astral Sorcery
+- Binnie's Mods
+- Chisel and Bits
+- Dimensional Control
+- FTB Utilities	
+- FTB Lib
+- In Control
+- Industrial Foregoing
+- JEI
+- Scavenge
+- UniDict
+- Voidcraft
+- Woot
+
+§lRemoved mods:§r
+- Tool Progression
+
+
+
+§n0.2.0 The Redstone Update (2017/12/04)§r
+
+- Updated to MC 1.12.2 and Forge 2556
+- Added recipe unlocking (for new worlds)
+- Added a lot of further progression
+- Made new dimension to replace Cavern
+- Made changes in mob spawning in the first 3 dimensions and also tweaked their drops
+- Added Tooltips for items that can't be crafted right away
+- Removed second Ancient Codex reward
+- Disabled Pattern recipe
+- Fixed Clay Bucket quest
+- Changed Drawer, Barrel and Chest Upgrades from Iron to Tin
+- Changed Embers Emitter and Receptor to 2 per craft
+- Unified custom Primal saw recipes a bit to allow multiple saws
+- Added Ash and Clay to Compacting
+- Temporarily remove Infinite Water Source recipe
+- Removed all Obsidian tools and AIOTs
+- Fish shouldn't be spawning anymore
+- Fixed Flexible Tool Repairing
+- Changed Sky & Cloud Color, Day & Night Cycle
+- Removed all Primal Core World Gen for safety (except Salt for now)
+- Disabled Conversion Wand to pickup Obsidian
+- Disabled WorldGen of ExtraBees Hives
+- Disabled Extra Trees to save on ids
+- Replaced Vanadium with Tungsten
+
+§lAdded mods:§r
+- Advanced Rocketry
+- Applied Energistics 2
+- BNBGamingLib
+- Buildcraft
+- Compact Machines
+- Dimensional Control
+- Electrostatics
+- Foundry
+- Lib Vulpes
+- Modular Diversity
+- Powered Thingies
+- Scavenge
+- Soot
+- Totem Essentials
+- Woot
+
+§lUpdated mods:§r
+- almost every mod (too many to list)
+
+§lRemoved mods:§r
+- Applied Fluidics
+- Applied Llamagistics
+- Cavern
+- Dig
+- Flat Colored Blocks
+- Totemic
+- Universal Remote
+- WholeTreeAxe
+
+
+§n0.1.4 (2017/10/14)§r
+
+- Removed Ceramics recipes to turn stuff back into Clay
+- Added Item Transfer to Embers Pipe Quest
+- Doubled Dust chance from Ash Sieving
+- Removed TConstruct Stone Stick in favour of Ex Nihilo one
+- Changed Barrel Upgrade, Hammer and Painter recipes
+- Heavily nerfed Fertilizer recipes
+- Disable Fel Pumpkin
+- Added decompacting recipes for Strainer and Sieve products so that Compacting Drawer can be used
+- Fixed Obsidian Rod Burnium recipe
+- Added Mossy Stone Bricks to the Restriction
+- Increase Burnium Burn Time
+- Disabled TConstruct Drying Rack and moved Dried Clay to Survivalist one
+- Added Bronze, Electrum and Dawnstone Metal Casting
+- Disabled Embers Plate Hammer recipes
+- Changed Drawer key recipes
+- Restriction now disallows open doors and allows TileEntities as walls
+- Added restricted blocks to CarryOn Blacklist
+
+§lUpdated mods:§r
+- Restriction
+- Toast Control
+- Modular Machinery
+
+
+§n0.1.3 (2017/10/11)§r
+
+- Disabled occasional Flint and Rock Drops from Dirt/Sand etc.
+- Disabled vanilla and SR Fishing Rods
+- Disabled Opaque TE Ducts
+- Changed Sawmill recipe and made a quest for it
+- Made Metal Caster and Crystallizer more flexible in design
+- Added Channels to the progression (with quest)
+- Added BOP gems to Strainer drops
+- Added special Tinker's Tools recipes and quest for it
+- Added quest for Hammer Crafting Table
+- Disabled vanilla Diamond Tools
+- Added Obsidian Dust to Ash Sieve Drops
+- Added recipes and quest for Flexible Tools
+- Changed Iron Oreberry Bush Trade to correct fruit
+
+§lRe-Added mods:§r
+- Dig
+
+§lAdded mods:§r
+- Ceramics
+
+§lUpdated mods:§r
+- Restriction
+- Carry On
+- Modular Machinery
+- Survivalist
+
+§lRemoved mods:§r
+- Clay Bucket
+- Quantum Storage
+- Reborn Core
+
+
+§n0.1.2 (2017/10/10)§r
+
+- Hopefully fixed Flint Hatchet quest
+- Hopefully fixed Restriction detecting doors
+- Disabled Tiny (Char)Coal
+- Disabled Solidified Experience
+- Disabled Oredict on Crushing Table to hopefully fix Gold Plates
+- Added missing Copper Foundry recipe
+- Added other vanilla logs to Chopping Block
+- Removed Skeleton Horse Spawning (hopefully)
+- Added Foundry Smelting of Rocks and Casting of Stone
+- Added Loam to Clay Cleaning
+- TCon Tables now show up in JEI
+- Changed Recipe of Sparks Crafting Station and disabled Wooden Hammer and Excavator pre-Station
+- Removed Obsidian Barrel recipe
+
+§lUpdated mods:§r
+- Restriction
+
+§lRemoved mods:§r
+- Wopper (this time for real)
+- Tumbleweed
+
+
+§n0.1.1 (2017/10/09)§r
+
+- Disabled Tinkers Table Casting as intended
+- Removed Dust Smelting in favor of Crystallizer as intended
+- Temporarily Disabled all other mods Crafting Tables and Furnaces
+- Removed Crates, changes Framed Chest recipe
+- Disabled Barrel Collecting Rain
+- Changed many Strainers chances
+- Disabled Hammers and Crooks
+- Disabled Planks and Stick Crafting recipes
+- Disable Secondary Mud recipe in favor for a new Barrel one
+- Make Cob and Concrete obtainable
+- fixed Adobe Crafter Quest explanation
+- Removed Bonemeal recipe
+- Changed Coarse Dirt recipe
+- Added Temp Dig Trades for Seeds and Trees
+- Set Morpheus to 25%
+- Moved Temporary Trade Quests to new Quest Line
+- Removed Wopper, but there is now a Wooden Hopper which works with Strainers
+- Changed Structured Crafter recipe
+
+§lUpdated mods:§r
+- Restriction
+- Carry On
+- Modular Machinery
+
+§lAdded mods:§r
+- Tinkers' Skyblock
+
+§lRemoved mods:§r
+- Wopper

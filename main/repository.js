@@ -6,8 +6,12 @@ const fs = require("fs");
 const file = require("./file.js");
 const {ipcMain} = require("electron");
 const app = require("electron").app;
+const ipc = require("./ipc.js");
 
 module.exports = {
+    op: {
+        drop: null,
+    },
     setup: function () {
         const json = global.cfg;
 
@@ -98,8 +102,8 @@ module.exports = {
         });
 
         global.win.webContents.on("did-finish-load",  () => {
-            ipcMain.addListener("repo", this.IPC); // add listener
-            global.win.webContents.send("repo", {action: "repoList", data: global.repos} ); // send messaage that is returned
+            ipcMain.addListener("repo", this.IPC.bind(this)); // add listener
+            ipc.send("repo", {action: "repoList", data: global.repos} ); // send messaage that is returned
         });
     },
     create: function (name, filetypes) {
@@ -146,36 +150,39 @@ module.exports = {
     IPC: function (ev, data) {
         switch (data.action) {
             case "drop":
-                console.log("DROP ", data.what, " TO ", data.to);
+                if (!this.op.drop || this.op.drop !== data.what) {
+                    this.op.drop = data.what;
+                    console.log("DROP ", data.what, " TO ", data.to);
 
-                // check if file or folder
-                if (file.get(data.what).isFile()) {
-                    let filename = data.what.slice(data.what.lastIndexOf("/") + 1);
-                    fs.copyFileSync(data.what, data.to + "/" + filename);
-                } else if (file.get(data.what).isFolder()) {
-                    let destination = data.to;
+                    // check if file or folder
+                    if (file.get(data.what).isFile()) {
+                        let filename = data.what.slice(data.what.lastIndexOf("/") + 1);
+                        fs.copyFileSync(data.what, data.to + "/" + filename);
+                    } else if (file.get(data.what).isFolder()) {
+                        let destination = data.to;
 
-                    if (data.to.trim().lastIndexOf("/") === data.to.trim().length -1) {
-                        destination += file.get(data.what).folder();
-                    } else {
-                        destination += "/" + file.get(data.what).folder();
+                        if (data.to.trim().lastIndexOf("/") === data.to.trim().length - 1) {
+                            destination += file.get(data.what).folder();
+                        } else {
+                            destination += "/" + file.get(data.what).folder();
+                        }
+
+                        file.get(data.what).copy(destination);
                     }
 
-                    file.get(data.what).copy(destination);
-                }
-
-                // get file n folder count and update client
-                global.win.webContents.send("repo", {action: "repoItemUpdate",
-                    repo: data.to,
-                    files: file.get(data.to).files().length,
-                    folders: file.get(data.to).folders().length
+                    // get file n folder count and update client
+                    ipc.send("repo", {
+                        action: "repoItemUpdate",
+                        repo: data.to,
+                        files: file.get(data.to).files().length,
+                        folders: file.get(data.to).folders().length
                     });
+                }
                 break;
             case "get":
                 // gets files from repository
                 let list = file.get(global.repoPath+data.repo).folders();
-
-                global.win.webContents.send(data.ipc, {action: "fileList",
+                ipc.send(data.ipc, {action: "fileList",
                     repo: data.repo,
                     list: list,
                 });

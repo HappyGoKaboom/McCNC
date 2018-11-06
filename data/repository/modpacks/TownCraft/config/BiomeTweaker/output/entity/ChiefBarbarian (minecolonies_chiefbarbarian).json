@@ -1,0 +1,6 @@
+
+{
+  "Name": "ChiefBarbarian",
+  "Registry ID": "minecolonies:chiefbarbarian",
+  "Class": "com.minecolonies.coremod.entity.ai.mobs.barbarians.EntityChiefBarbarian"
+}

@@ -1,0 +1,39 @@
+{
+	"name": "compactmachines3:machinecase",
+	"target-item": "teslacorelib:machine_case",
+	"target-meta": 0,
+	"target-count": 1,
+
+	"duration": 440,
+
+	"catalyst": "biomesoplenty:gem",
+	"catalyst-meta": 1,
+	"input-types": {
+	  "a": { "id": "immersiveengineering:sheetmetal", "meta": 3 },
+	  "b": { "id": "thermalfoundation:storage_alloy", "meta": 5 }
+	},
+
+	"symmetrical": true,
+	"shape": [
+		[
+			["a","a","a"],
+			["a","a","a"],
+			["a","a","a"]
+		],
+		[
+			["a","a","a"],
+			["a","b","a"],
+			["a","a","a"]
+		],
+		[
+			["a","a","a"],
+			["a","a","a"],
+			["a","a","a"]
+		]
+	]
+
+}
+
+
+
+

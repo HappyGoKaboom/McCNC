@@ -1,0 +1,34 @@
+[
+  {
+    "mob": "biomesoplenty:pixie",
+    "remove": "biomesoplenty:pixie_dust",
+	"itemcount": "1/1-2/2-3/3"
+  },
+  {
+    "mob": "biomesoplenty:pixie",
+    "item": "botania:manaresource@8",
+	"player": true,
+	"itemcount": "1/1-2/2-3/3"
+  },
+  {
+    "mob": "astralsorcery:entityflare",
+    "item": "botania:spark",
+	"player": true,
+	"itemcount": "1/1-2/2-3/3"
+  },
+  {
+    "mob": "minecraft:silverfish",
+    "item": "thermalfoundation:material@194",
+	"itemcount": "1/1-2/2-3/3"
+  },
+  {
+    "mob": "minecraft:vex",
+    "item": "actuallyadditions:item_misc@15",
+	"itemcount": "1/1-2/2-3/3"
+  },
+  {
+    "mob": "minecraft:endermite",
+    "item": "terraqueous:item_main@200",
+	"itemcount": "1/1-2/2-3/3"
+  }
+]

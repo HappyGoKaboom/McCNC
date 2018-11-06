@@ -1,0 +1,6 @@
+
+{
+  "Name": "foundry.gunSkeleton",
+  "Registry ID": "foundry:gun_skeleton",
+  "Class": "exter.foundry.entity.EntitySkeletonGun"
+}

@@ -1,0 +1,11 @@
+{
+	"name" : "builtin:loot",
+	"inherit" : [
+		"fc3:loot0",
+		"fc3:loot1",
+		"fc3:loot2",
+		"fc3:loot3",
+		"fc3:loot4",
+		"fc3:loot_all"
+	]
+}
