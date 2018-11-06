@@ -1,6 +1,0 @@
-
-{
-  "Name": "player_drone",
-  "Registry ID": "drones:player_drone",
-  "Class": "drones.entities.EntityPlayerDrone"
-}

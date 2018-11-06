@@ -1,9 +1,0 @@
-{
-    "name": "haste",
-    "potion": "minecraft:haste",
-    "amplifier": 2,
-    "minimum": 95,
-    "maximum": 100,
-    "detect": "average",
-    "enabled": true
-}

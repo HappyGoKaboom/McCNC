@@ -1,3 +1,0 @@
-inscribe=
-    refinedstorage:silicon ae2:material.silicon_press
-    -> ae2:material.silicon_print

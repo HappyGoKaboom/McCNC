@@ -1,6 +1,0 @@
-
-{
-  "Name": "torochess_rook",
-  "Registry ID": "torochess:torochess_rook",
-  "Class": "net.torocraft.chess.entities.rook.EntityRook"
-}

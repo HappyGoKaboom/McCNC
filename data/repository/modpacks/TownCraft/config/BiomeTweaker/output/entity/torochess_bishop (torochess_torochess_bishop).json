@@ -1,6 +1,0 @@
-
-{
-  "Name": "torochess_bishop",
-  "Registry ID": "torochess:torochess_bishop",
-  "Class": "net.torocraft.chess.entities.bishop.EntityBishop"
-}

@@ -1,9 +1,0 @@
-{
-	"name": "slowness",
-	"potion": "minecraft:slowness",
-	"amplifier": 0,
-	"minimum": 0,
-	"maximum": 10,
-	"detect": "any",
-	"enabled": true
-}
