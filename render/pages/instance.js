@@ -189,12 +189,8 @@ $.global.register({
                                 $.create.div({
                                     id: "instance.filelist",
                                     },
-                                    $.id.instance.repolist.appendChild(
-                                        $.styler.append(new $.components.list({
-                                            id: "instance.list.modpack",
-                                            list: {}
-                                        }), "instance-file-list")
-                                    )
+                                    // need to create each individual list (mod, modpack, config, etc)
+
                                 )
                             ),
                         )
@@ -223,7 +219,114 @@ $.global.register({
                             }}), "instance-btn-right"),
 
                         // ---------------------------------
+                        $.create.div({
+                                styler: "instance-final-cont"
+                            },
+                            // Versions section
+                            $.create.div({
+                                    styler: "instance-final-versions"
+                                },
+                                $.create.p({
+                                    styler: "instance-final-subheader",
+                                    textContent: "Versions"
+                                }),
+                                // Minecraft version Drop down
+                                // ===== EXPORT COMPONENT=======
+                                $.create.div({
+                                    styler: "dropdown-box",
+                                    },
+                                    $.create.p({
+                                        textContent: "Minecraft: ",
+                                        styler: "dropdown-box-label",
+                                    }),
+                                    $.create.select({
+                                        id: "instance.version.minecraft",
+                                        styler: "dropdown-box-select",
+                                        },
+                                        $.create.option({
+                                            value: "1.12.3",
+                                            textContent: "1.12.3",
+                                            styler: "dropdown-box-item",
+                                        }),
+                                        $.create.option({
+                                            value: "1.12.2",
+                                            textContent: "1.12.2",
+                                            styler: "dropdown-box-item",
+                                        }),
+                                        $.create.option({
+                                            value: "1.12.1",
+                                            textContent: "1.12.1",
+                                            styler: "dropdown-box-item",
+                                        }),
+                                    ),
+                                ),
+                                // ===== EXPORT ENDS =======
+                                // Java version Drop down
+                                // ===== EXPORT COMPONENT=======
+                                $.create.div({
+                                        styler: "dropdown-box",
+                                    },
+                                    $.create.p({
+                                        textContent: "Java: ",
+                                        styler: "dropdown-box-label",
+                                    }),
+                                    $.create.select({
+                                            id: "instance.version.java",
+                                            styler: "dropdown-box-select",
+                                        },
+                                        $.create.option({
+                                            value: "8.12.0",
+                                            textContent: "8.12.0",
+                                            styler: "dropdown-box-item",
+                                        }),
+                                    ),
+                                ),
+                                // ===== EXPORT ENDS =======
+                                // Forge version Drop down
+                                // ===== EXPORT COMPONENT=======
+                                $.create.div({
+                                        styler: "dropdown-box",
+                                    },
+                                    $.create.p({
+                                        textContent: "Forge: ",
+                                        styler: "dropdown-box-label",
+                                    }),
+                                    $.create.select({
+                                            id: "instance.version.forge",
+                                            styler: "dropdown-box-select",
+                                        },
+                                        $.create.option({
+                                            value: "1524.12",
+                                            textContent: "1524.12",
+                                            styler: "dropdown-box-item",
+                                        }),
+                                    ),
+                                ),
+                                // ===== EXPORT ENDS =======
+                            ),
+                            // Java section
+                            $.create.div({
+                                    styler: "instance-final-java"
+                                },
+                                $.create.p({
+                                    styler: "instance-final-subheader",
+                                    textContent: "Java"
+                                }),
+                                // Java args and memory
 
+                            ),
+                            // Settings section (backups and any extras)
+                            $.create.div({
+                                    styler: "instance-final-settings"
+                                },
+                                $.create.p({
+                                    styler: "instance-final-subheader",
+                                    textContent: "Settings"
+                                }),
+                                // Backup policy, snapshot frequency and where
+
+                            ),
+                        ),
                     ),
                 ),
             );
@@ -246,38 +349,96 @@ $.global.register({
             switch (data.action) {
                 case "fileList":
                     // create list viewer
-                    $.id.instance.repolist.innerHTML = "";
-
+                    let itemlist = {};
                     let list = {};
 
-                    for (let n in data.list) {
-                        if (data.list.hasOwnProperty(n)) {
+                    $.append(data.folders, itemlist);
+                    $.append(data.files, itemlist);
+
+                    /* @TODO
+                            Change events to select / deselect and add remove accordingly
+                     */
+                    for (let n in itemlist) {
+                        if (itemlist.hasOwnProperty(n)) {
                             list[n] = {
-                                data: data.list[n],
-                                text: data.list[n].slice(data.list[n].lastIndexOf("/")+1),
+                                data: itemlist[n],
+                                text: itemlist[n].slice(itemlist[n].lastIndexOf("/")+1),
                                 select: true,
                                 on: {
-                                    click: (el) => {
-                                        $.id.instance.list.modpack.add($.id.instance.list.modpack, {
-                                            data: data.list[n],
-                                            text: data.list[n].slice(data.list[n].lastIndexOf("/")+1),
+                                    select: (ev) => {
+                                        // Add to instance list
+                                        $.id.instance.list[data.repo].add($.id.instance.list[data.repo], {
+                                            data: itemlist[n],
+                                            text: itemlist[n].slice(itemlist[n].lastIndexOf("/")+1),
                                             select: true,
                                             on: {
-                                                click: (el) => {
+                                                click: (ev) => {
+                                                    // remove from instance list and deselect item
+                                                    for (let n in $.id.instance.repo[data.repo].children) {
+                                                        if ($.id.instance.repo[data.repo].children.hasOwnProperty(n)) {
+                                                            if ($.id.instance.repo[data.repo].children[n].data ===  ev.target.data) {
+                                                                // deselect
+                                                                $.styler.setSelectOff($.id.instance.repo[data.repo].children[n]);
+                                                                $.styler.setHoverOff($.id.instance.repo[data.repo].children[n]);
+                                                            }
+                                                        }
+                                                    }
+
+                                                    ev.target.remove(ev.target);
                                                 },
                                             }
                                         });
                                     },
+                                    unselect: (ev) => {
+                                        // remove from instance list
+                                        for (let n in $.id.instance.list[data.repo].children) {
+                                            if ($.id.instance.list[data.repo].children.hasOwnProperty(n)) {
+                                                if ($.id.instance.list[data.repo].children[n].data === ev.target.data) {
+                                                    // deselect
+                                                    $.id.instance.list[data.repo].children[n].remove($.id.instance.list[data.repo].children[n])
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
 
-                    $.id.instance.repolist.appendChild(
-                        $.styler.append(new $.components.list({
-                            list: list
-                        }), "instance-file-list")
-                    );
+                    // create each list for mods, modpack, config etc
+                    if (!$.id.instance.repo) {
+                        $.id.instance.repo = {};
+                    }
+
+                    if (!$.id.instance.repo[data.repo]) {
+                        // does not exist so create it
+                        $.id.instance.repolist.appendChild(
+                            $.styler.append(new $.components.list({
+                                id: "instance.repo." + data.repo,
+                                list: list
+                            }), ["instance-file-list", "instance-repo-hidden"])
+                        );
+
+                        $.id.instance.filelist.appendChild(
+                            $.styler.append(new $.components.list({
+                                id: "instance.list."+data.repo,
+                                list: {}
+                            }), ["instance-file-list", "instance-repo-hidden"])
+                        )
+
+                    } else {
+                        // @TODO exists do not create any more lists just update it
+                    }
+
+                    for (let n in $.id.instance.repo) {
+                        if (n === data.repo) {
+                            $.styler.set($.id.instance.repo[n], "swap instance-repo-hidden/instance-repo-shown");
+                            $.styler.set($.id.instance.list[n], "swap instance-repo-hidden/instance-repo-shown");
+                        } else {
+                            $.styler.set($.id.instance.repo[n], "swap instance-repo-shown/instance-repo-hidden");
+                            $.styler.set($.id.instance.list[n], "swap instance-repo-shown/instance-repo-hidden");
+                        }
+                    }
                     break;
             }
         }
@@ -491,7 +652,78 @@ $.global.register({
                 },
                 "instance-file-list": {
                     height: "calc(100% - 62px)",
-                }
+                },
+                "instance-repo-hidden": {
+                    display: "none",
+                },
+                "instance-repo-shown": {
+                    display: "initial",
+                },
+                "instance-final-cont": {
+                    display: "grid",
+                    gridTemplateColumns: "4.5% 30% 30% 30% 4.5%",
+                    gridColumnGap: "16px",
+                    height: "75%",
+                },
+                "instance-final-versions": {
+                    gridColumnStart: "2",
+                    gridRowStart: "1",
+                },
+                "instance-final-java": {
+                    gridColumnStart: "3",
+                    gridRowStart: "1",
+                },
+                "instance-final-settings": {
+                    gridColumnStart: "4",
+                    gridRowStart: "1",
+                },
+                "instance-final-subheader": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "16pt",
+                    letterSpacing: "2px",
+                    borderBottom: "2px solid",
+                    borderColor: "@theme.borderColor",
+                },
+                "instance-final-subitem": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "14pt",
+                    borderLeft: "6px solid transparent",
+                    boxSizing: "border-box",
+                    margin: "0px 48px",
+                    padding: "8px 0px 8px 8px",
+                },
+                "dropdown-box": {
+                    display: "grid",
+                    gridTemplateColumns: "50% 50%",
+                    margin: "8px 0px"
+                },
+                "dropdown-box-label": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "@theme.defaultFontSize",
+                    margin: "0",
+                    padding: "0",
+                },
+                "dropdown-box-select": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "@theme.defaultFontSize",
+                    backgroundColor: "@theme.backColor",
+                    border: "1px solid",
+                    borderColor: "@theme.textColor",
+                    padding: "0px 12px",
+                    borderRadius: "25px",
+                    outline: $.prefix.bind("none"),
+                },
+                "dropdown-box-item": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "@theme.defaultFontSize",
+                    border: "none",
+                    outline: $.prefix.bind("none"),
+                },
             });
         }
     }

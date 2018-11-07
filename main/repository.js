@@ -181,10 +181,13 @@ module.exports = {
                 break;
             case "get":
                 // gets files from repository
-                let list = file.get(global.repoPath+data.repo).folders();
+                let folders = file.get(global.repoPath+data.repo).folders();
+                let files = file.get(global.repoPath+data.repo).files();
+
                 ipc.send(data.ipc, {action: "fileList",
                     repo: data.repo,
-                    list: list,
+                    folders: folders,
+                    files: files,
                 });
                 break;
         }

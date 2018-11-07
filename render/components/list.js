@@ -22,7 +22,6 @@ $.global.register({
         }
 
         create(args) {
-            console.log(args)
             return ($.create.div({
                         id: args.id ? args.id : "",
                         add: this.add.bind(this),
@@ -42,8 +41,8 @@ $.global.register({
                                     textContent: args.list[n].text,
                                     isItem: true,
                                     on: args.list[n].on ? args.list[n].on : {},
-                                    add: this.add.bind(this),
-                                    remove: this.remove.bind(this),
+                                    add: this.add,
+                                    remove: this.remove,
                                     events: {
                                         click: this.click,
                                     },
@@ -116,25 +115,26 @@ $.global.register({
             if (!target && this) {
                 target = this;
             }
+            console.log(target)
 
             target.parentNode.removeChild(target)
         }
 
         click (ev) {
             if (ev.target.selectable) {
-                if (ev.selected) {
-                    ev.selected = false;
+                if (ev.target.selected) {
+                    ev.target.selected = false;
                     $.styler.set(ev.target, "list-unselect");
 
-                    if (ev.target.on.select) {
-                        ev.target.on.select.call(ev.target, ev.target);
+                    if (ev.target.on.unselect) {
+                        ev.target.on.unselect.call(ev.target, {event: "unselect", target: ev.target});
                     }
                 } else {
-                    ev.selected = true;
+                    ev.target.selected = true;
                     $.styler.set(ev.target, "list-select");
 
                     if (ev.target.on.select) {
-                        ev.target.on.unselect.call(ev.target, ev.target);
+                        ev.target.on.select.call(ev.target, {event: "select", target: ev.target});
                     }
                 }
             }
