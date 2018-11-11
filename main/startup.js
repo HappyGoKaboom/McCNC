@@ -10,6 +10,7 @@ module.exports = {
     setup: function () {
         // sets up the app and its data path
         let userDataPath = global.appPath+"/data/";
+        global.userDataPath = userDataPath;
         file.mkdir(userDataPath);
 
         global.config = {
@@ -36,9 +37,10 @@ module.exports = {
             instances: []
         });
 
+        global.java.setup();
         global.repo.setup();
 
-        // json.create("main", "./config", global.config);
+        // json.create("main", "./config", global.config); // @TODO enable / uncomment
     },
     run: function () {
         // check if setup if not run setup
@@ -60,6 +62,7 @@ module.exports = {
 
     // add file watcher on repository to update GUI
     global.repo.run();
+    global.java.run();
     },
 };
 

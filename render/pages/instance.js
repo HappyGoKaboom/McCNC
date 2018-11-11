@@ -13,6 +13,7 @@ $.global.register({
     instance: class Instance {
         constructor(args) {
             listenIPC("instance", this.IPC);
+            this.getJavaArgs();
 
             // GUI here
             $.id.content.appendChild(
@@ -231,89 +232,38 @@ $.global.register({
                                     textContent: "Versions"
                                 }),
                                 // Minecraft version Drop down
-                                // ===== EXPORT COMPONENT=======
-                                $.create.div({
-                                    styler: "dropdown-box",
-                                    },
-                                    $.create.p({
-                                        textContent: "Minecraft: ",
-                                        styler: "dropdown-box-label",
+                                $.styler.append(
+                                    new $.components.dropdown({
+                                        label: "Minecraft",
+                                        list: [
+                                            {text: "0.12.0", value: "0.12.0"},
+                                            {text: "0.12.1", value: "0.12.1"},
+                                            {text: "0.12.3", value: "0.12.3"},
+                                        ]
                                     }),
-                                    $.create.select({
-                                        id: "instance.version.minecraft",
-                                        styler: "dropdown-box-select",
-                                        },
-                                        $.create.option({
-                                            value: "1.12.3",
-                                            textContent: "1.12.3",
-                                            styler: "dropdown-box-item",
-                                        }),
-                                        $.create.option({
-                                            value: "1.12.2",
-                                            textContent: "1.12.2",
-                                            styler: "dropdown-box-item",
-                                        }),
-                                        $.create.option({
-                                            value: "1.12.1",
-                                            textContent: "1.12.1",
-                                            styler: "dropdown-box-item",
-                                        }),
-                                    ),
-                                ),
-                                // ===== EXPORT ENDS =======
+                                "instance-version-margin"),
                                 // Java version Drop down
-                                // ===== EXPORT COMPONENT=======
-                                $.create.div({
-                                        styler: "dropdown-box",
-                                    },
-                                    $.create.p({
-                                        textContent: "Java: ",
-                                        styler: "dropdown-box-label",
+                                $.styler.append(
+                                    new $.components.dropdown({
+                                        label: "Java",
+                                        list: [
+                                            {text: "0.12.0", value: "0.12.0"},
+                                            {text: "0.12.1", value: "0.12.1"},
+                                            {text: "0.12.3", value: "0.12.3"},
+                                        ]
                                     }),
-                                    $.create.select({
-                                            id: "instance.version.java",
-                                            styler: "dropdown-box-select",
-                                        },
-                                        $.create.option({
-                                            value: "8.12.0",
-                                            textContent: "8.12.0",
-                                            styler: "dropdown-box-item",
-                                        }),
-                                    ),
-                                ),
-                                // ===== EXPORT ENDS =======
+                                "instance-version-margin"),
                                 // Forge version Drop down
-                                // ===== EXPORT COMPONENT=======
-                                $.create.div({
-                                        styler: "dropdown-box",
-                                    },
-                                    $.create.p({
-                                        textContent: "Forge: ",
-                                        styler: "dropdown-box-label",
+                                $.styler.append(
+                                    new $.components.dropdown({
+                                        label: "Forge",
+                                        list: [
+                                            {text: "0.12.0", value: "0.12.0"},
+                                            {text: "0.12.1", value: "0.12.1"},
+                                            {text: "0.12.3", value: "0.12.3"},
+                                        ]
                                     }),
-                                    $.create.select({
-                                            id: "instance.version.forge",
-                                            styler: "dropdown-box-select",
-                                        },
-                                        $.create.option({
-                                            value: "1524.12",
-                                            textContent: "1524.12",
-                                            styler: "dropdown-box-item",
-                                        }),
-                                    ),
-                                ),
-                                // ===== EXPORT ENDS =======
-                            ),
-                            // Java section
-                            $.create.div({
-                                    styler: "instance-final-java"
-                                },
-                                $.create.p({
-                                    styler: "instance-final-subheader",
-                                    textContent: "Java"
-                                }),
-                                // Java args and memory
-
+                                "instance-version-margin"),
                             ),
                             // Settings section (backups and any extras)
                             $.create.div({
@@ -326,10 +276,33 @@ $.global.register({
                                 // Backup policy, snapshot frequency and where
 
                             ),
+                            // Java section
+                            $.create.div({
+                                    styler: "instance-final-java"
+                                },
+                                $.create.p({
+                                    styler: "instance-final-subheader",
+                                    textContent: "Java"
+                                }),
+                                // Java args and memory
+                                this.createJavaArgs(),
+                            ),
+
                         ),
                     ),
                 ),
             );
+        }
+
+        getJavaArgs() {
+            ipcRenderer.send("java", {
+                action: "getFlags",
+                ipc: "instance",
+            });
+        }
+
+        createJavaArgs() {
+
         }
 
         registered() {
@@ -439,6 +412,9 @@ $.global.register({
                             $.styler.set($.id.instance.list[n], "swap instance-repo-shown/instance-repo-hidden");
                         }
                     }
+                    break;
+                case "javaArgs":
+
                     break;
             }
         }
@@ -670,12 +646,12 @@ $.global.register({
                     gridRowStart: "1",
                 },
                 "instance-final-java": {
-                    gridColumnStart: "3",
+                    gridColumn: "3/5",
                     gridRowStart: "1",
                 },
                 "instance-final-settings": {
-                    gridColumnStart: "4",
-                    gridRowStart: "1",
+                    gridColumnStart: "2",
+                    gridRowStart: "2",
                 },
                 "instance-final-subheader": {
                     color: "@theme.textColor",
@@ -694,36 +670,9 @@ $.global.register({
                     margin: "0px 48px",
                     padding: "8px 0px 8px 8px",
                 },
-                "dropdown-box": {
-                    display: "grid",
-                    gridTemplateColumns: "50% 50%",
-                    margin: "8px 0px"
-                },
-                "dropdown-box-label": {
-                    color: "@theme.textColor",
-                    fontFamily: "@theme.defaultFont",
-                    fontSize: "@theme.defaultFontSize",
-                    margin: "0",
-                    padding: "0",
-                },
-                "dropdown-box-select": {
-                    color: "@theme.textColor",
-                    fontFamily: "@theme.defaultFont",
-                    fontSize: "@theme.defaultFontSize",
-                    backgroundColor: "@theme.backColor",
-                    border: "1px solid",
-                    borderColor: "@theme.textColor",
-                    padding: "0px 12px",
-                    borderRadius: "25px",
-                    outline: $.prefix.bind("none"),
-                },
-                "dropdown-box-item": {
-                    color: "@theme.textColor",
-                    fontFamily: "@theme.defaultFont",
-                    fontSize: "@theme.defaultFontSize",
-                    border: "none",
-                    outline: $.prefix.bind("none"),
-                },
+                "instance-version-margin": {
+                    margin: "8px 0px 8px 48px"
+                }
             });
         }
     }

@@ -102,7 +102,7 @@ module.exports = {
         });
 
         global.win.webContents.on("did-finish-load",  () => {
-            ipcMain.addListener("repo", this.IPC.bind(this)); // add listener
+            ipcMain.on("repo", this.IPC.bind(this)); // add listener
             ipc.send("repo", {action: "repoList", data: global.repos} ); // send messaage that is returned
         });
     },

@@ -6,6 +6,7 @@ global.repo = require('./main/repository.js');
 global.cfg = require('./main/config.js');
 global.setup = require('./main/setup.js');
 global.startup = require('./main/startup.js');
+global.java = require('./main/java.js');
 
 
 // Keep a global reference of the window object, if you don't, the window will
