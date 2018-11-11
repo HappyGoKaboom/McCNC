@@ -50,7 +50,7 @@ $.global.register({
                             args: args,
                             ref: "switch",
                             refs: true,
-                            id: args.id,
+                            id: args.id ? args.id : "",
                             switchType: args.type,
                             value: args.value,
                             styler: [

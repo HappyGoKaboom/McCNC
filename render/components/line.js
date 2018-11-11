@@ -41,7 +41,8 @@ $.global.register({
                                     case "right":
                                         return "line-grad-3";
                                 }
-                            })()
+                            })(),
+                            [arg.styler]
                             ],
                         },
                 )
@@ -94,7 +95,7 @@ $.global.register({
 
         create(arg) {
             return ($.create.div({
-                        styler: "v-line",
+                        styler: ["v-line", [arg.styler]],
                     },
                 )
             )

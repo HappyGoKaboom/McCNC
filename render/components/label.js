@@ -22,8 +22,9 @@ $.global.register({
         }
 
         create(arg) {
-            return ($.create.div({
-                        id: arg.id ? arg.id : null,
+            return (
+                $.create.div({
+                        id: arg.id ? arg.id : "",
                         styler: "label-container",
                     },
                     $.create.p({
@@ -32,19 +33,19 @@ $.global.register({
                             "label-text"
                         ]
                     }),
-                    (() => {
-                        if (arg.value) {
-                            if (typeof arg.value === "string") {
-                                return $.create.p({
-                                    textContent: arg.value,
-                                    styler: "label-value"
-                                });
-                            } else {
-                                // custom object or element
-                                return arg.value;
-                            }
-                        }
-                    })()
+                    // (() => {
+                    //     if (arg.value) {
+                    //         if (typeof arg.value === "string") {
+                    //             return $.create.p({
+                    //                 textContent: arg.value,
+                    //                 styler: "label-value"
+                    //             });
+                    //         } else {
+                    //             // custom object or element
+                    //             return arg.value;
+                    //         }
+                    //     }
+                    // })()
                 )
             )
         }

@@ -285,9 +285,12 @@ $.global.register({
                                     textContent: "Java"
                                 }),
                                 // Java args and memory
-                                this.createJavaArgs(),
+                                $.create.div({
+                                    id: "java.flags",
+                                    styler: "java-flags-cont"
+                                    },
+                                ),
                             ),
-
                         ),
                     ),
                 ),
@@ -302,7 +305,143 @@ $.global.register({
         }
 
         createJavaArgs() {
+            let flags = {};
 
+            $.map($.instance.flags, (v, k) => {
+                if (v.section && !flags[v.section]) {
+                    // create section
+                    flags[v.section] = document.createDocumentFragment();
+
+                    flags[v.section].appendChild($.create.div({
+                        id: "java.section."+v.section,
+                        styler: "java-section-cont"
+                        },
+                        $.create.p({
+                            textContent: v.section,
+                            styler: "instance-files-subheader"
+                        }),
+                    ));
+                }
+
+                // section the item belongs to
+                let section = $.id.java.section[v.section];
+
+                /*
+                    Cont
+                        Label (Flag)    Type Opts
+                        description
+                        warning
+
+                 */
+
+                section.appendChild(
+                    $.create.div({
+                            styler: "java-item-cont"
+                        },
+                        $.create.div({
+                                styler: "java-item-flag"
+                            },
+                            $.create.p({
+                                textContent: k,
+                                styler: "java-item-label"
+                            }),
+                            new $.components.hLine({
+                                style: "left",
+                                styler: {
+                                    "h-line": {
+                                        width: "30%"
+                                    }
+                                }
+                            }),
+                            // Flag
+                            $.create.div({
+                                styler: "java-text-indent"
+                                },
+                                $.create.div({
+                                        styler: "java-item-enabled"
+                                    },
+                                    $.create.p({
+                                        textContent: "Flag:",
+                                        styler: ["java-item-text", "java-item-prefix", "java-item-indent"]
+                                    }),
+                                    new $.components.switch({
+                                        type: "slider",
+                                        label: v.flag ? v.flag : "",
+                                        styler: this.switchStyler()
+                                    })
+                                ),
+
+                                // Description
+                                $.create.p({
+                                    textContent: "Description:",
+                                    styler: ["java-item-text", "java-item-prefix"]
+                                }),
+                                $.create.p({
+                                    textContent: v.description ? v.description : "",
+                                    styler: ["java-item-text", "java-item-description", "java-item-indent"]
+                                }),
+
+                                // Warning
+                                $.create.p({
+                                    textContent: "Warning:",
+                                    styler: ["java-item-text", "java-item-prefix"]
+                                }),
+                                $.create.p({
+                                    textContent: v.warning ? v.warning : "",
+                                    styler: ["java-item-text", "java-item-warning", "java-item-indent"]
+                                }),
+                            ),
+                        ),
+                    )
+                );
+
+                switch (v.type) {
+                    case "bool":
+
+                        break;
+                    case "number":
+
+                        break;
+                    case "text":
+
+                        break;
+                    case "memory":
+
+                        break;
+                    case "list":
+
+                        break;
+                }
+            });
+
+            // iter thru flags for each section
+            $.map( flags, (v)=> {
+                $.id.java.flags.appendChild(v);
+            });
+        }
+
+        switchStyler() {
+            return {
+                "c-switch-outer": {
+                    border: "2px solid",
+                    borderColor: "@theme.textColor",
+                    marginLeft: "12px"
+                },
+                "c-switch-slider-on": {
+                    backgroundColor: "limegreen",
+                },
+                "c-switch-slider-off": {
+                    backgroundColor: "#ff4500",
+                },
+                "c-switch-hover-on": {
+                    backgroundColor: "@theme.backColorLighter",
+                },
+                "c-switch-label": {
+                    fontSize: "@theme.defaultFontSize",
+                    fontFamily: "@theme.defaultFont",
+                    color: "@theme.textColor",
+                },
+            }
         }
 
         registered() {
@@ -414,7 +553,8 @@ $.global.register({
                     }
                     break;
                 case "javaArgs":
-
+                    $.instance.flags = data.data;
+                    $.instance.createJavaArgs();
                     break;
             }
         }
@@ -638,6 +778,7 @@ $.global.register({
                 "instance-final-cont": {
                     display: "grid",
                     gridTemplateColumns: "4.5% 30% 30% 30% 4.5%",
+                    gridTemplateRows: "100%",
                     gridColumnGap: "16px",
                     height: "75%",
                 },
@@ -672,6 +813,51 @@ $.global.register({
                 },
                 "instance-version-margin": {
                     margin: "8px 0px 8px 48px"
+                },
+                "java-flags-cont": {
+                    overflowY: "scroll",
+                    height: "calc(100% - 62px)",
+                },
+                "java-item-cont": {
+                    padding: "12px 12px"
+                },
+                "java-item-text": {
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "@theme.defaultFontSize",
+                },
+                "java-item-label": {
+                    color: "@theme.textColor",
+                    fontFamily: "@theme.defaultFont",
+                    fontSize: "14pt",
+                    margin: "0",
+                    padding: "0"
+                },
+                "java-item-warning": {
+                    color: "yellow",
+                },
+                "java-item-description": {
+                    color: "@theme.textColor",
+                },
+                "java-item-prefix": {
+                    fontWeight: "bold",
+                    letterSpacing: "2px",
+                    color: "@theme.textColor",
+                },
+                "java-section-cont": {
+
+                },
+                "java-item-indent": {
+                    padding: "0px 14px"
+                },
+                "java-text-indent": {
+                    padding: "4px 18px"
+                },
+                "java-item-enabled": {
+                    display: "grid",
+                    gridTemplateColumns: "min-content auto",
+                    gridColumnGap: "12px",
+                    alignItems: "center",
+                    justifyItems: "stretch",
                 }
             });
         }
